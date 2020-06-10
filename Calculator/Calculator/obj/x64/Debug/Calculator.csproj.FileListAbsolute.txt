@@ -1,9 +1,0 @@
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\bin\x64\Debug\Calculator.exe.config
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\bin\x64\Debug\Calculator.exe
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\bin\x64\Debug\Calculator.pdb
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\x64\Debug\Calculator.csprojResolveAssemblyReference.cache
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\x64\Debug\Calculator.Калькулятор.resources
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\x64\Debug\Calculator.Properties.Resources.resources
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\x64\Debug\Calculator.csproj.GenerateResource.Cache
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\x64\Debug\Calculator.exe
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\x64\Debug\Calculator.pdb
