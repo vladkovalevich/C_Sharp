@@ -1,8 +1,0 @@
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\bin\Release\Calculator.exe.config
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\bin\Release\Calculator.exe
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\bin\Release\Calculator.pdb
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\Release\Calculator.Калькулятор.resources
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\Release\Calculator.Properties.Resources.resources
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\Release\Calculator.csproj.GenerateResource.Cache
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\Release\Calculator.exe
-C:\Users\VLAD\Dropbox\Projects\Calculator\Calculator\obj\Release\Calculator.pdb

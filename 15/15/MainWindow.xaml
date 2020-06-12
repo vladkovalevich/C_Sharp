@@ -1,0 +1,73 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="_15.MainWindow"
+        Title="MainWindow" Height="700" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="295*"/>
+            <ColumnDefinition Width="68*"/>
+            <ColumnDefinition Width="129*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="_Time" Text="0" Grid.ColumnSpan="3" Margin="284,107,91,542" />
+
+        <TextBlock  Margin="35,5,68,65" Grid.ColumnSpan="3"  >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.196"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Перемешиание"/></TextBlock>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,57,93,0" Width="117" Height="46" x:Name="_RestartBtn" Click="_RestartBtn_Click_1" Content="Restart" Grid.ColumnSpan="3"/>
+        <Grid Margin="46,184,46,85" x:Name="_Root" Background="AliceBlue" Width="400" Height="400" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_00" Click="button_Click" />
+            <Button Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_01"  Click="button_Click" />
+            <Button Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_02" Click="button_Click" />
+            <Button Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_03" Click="button_Click" />
+            <Button Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_10" Click="button_Click" />
+            <Button Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_11" Click="button_Click" />
+            <Button Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_12" Click="button_Click" />
+            <Button Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_13" Click="button_Click" />
+            <Button Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_20" Click="button_Click" />
+            <Button Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_21" Click="button_Click" />
+            <Button Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_22" Click="button_Click" />
+            <Button Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_23" Click="button_Click" />
+            <Button Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_30" Click="button_Click" />
+            <Button Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_31" Click="button_Click" />
+            <Button Grid.Row="3" Grid.Column="2"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_32" Click="button_Click" />
+            <Button Grid.Row="3" Grid.Column="3"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="_33" Click="button_Click" />
+        </Grid>
+        <Grid Margin="50,70,0,0" Width="220" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <RadioButton x:Name="NameBlock10" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Новичок" Checked="RadioButton_Checked_10" IsChecked="True" />
+            <RadioButton Grid.Row="1" x:Name="NameBlock100" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Любитель" Checked="RadioButton_Checked_100" RenderTransformOrigin="0.347,0.533"/>
+            <RadioButton Grid.Row="2" x:Name="NameBlock1000" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Эксперт" Checked="RadioButton_Checked_1000"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="TextBlock10" TextWrapping="Wrap" Text="The Best (:-)" />
+            <TextBlock Grid.Row="1"  Grid.Column="1" x:Name="TextBlock100" TextWrapping="Wrap" Text="The Best (:-)" />
+            <TextBlock Grid.Row="2"  Grid.Column="1" x:Name="TextBlock1000" TextWrapping="Wrap" Text="The Best (:-)"/>
+        </Grid>
+
+    </Grid>
+</Window>
