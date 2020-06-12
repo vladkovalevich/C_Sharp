@@ -121,9 +121,6 @@
     <Resource Include="depositphotos_155369456-stock-photo-flowers-with-sunglasses-and-cosmetics.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Рисунок.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Image1.gif" />
   </ItemGroup>
   <ItemGroup>

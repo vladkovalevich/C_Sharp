@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PhotoWiew"
         mc:Ignorable="d"
-        Title="PhotoWiew" Height="450" Width="731.195" Icon="Рисунок.png">
+        Title="PhotoWiew" Height="450" Width="731.195">
     <Grid Background="Gainsboro">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
