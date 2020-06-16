@@ -62,6 +62,7 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
+            this.SizeChanged += new System.EventHandler(this._SizeChanged);
             // 
             // panel1
             // 
@@ -157,6 +158,7 @@
             this.DisplayedValue.Size = new System.Drawing.Size(714, 207);
             this.DisplayedValue.TabIndex = 57;
             this.DisplayedValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             // 
             // panel3
             // 

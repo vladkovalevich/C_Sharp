@@ -275,5 +275,12 @@ namespace Calculator
             }
 
         }
+
+        const int MIN_WIDTH_TO_SHOW_HISTORY = 500;
+
+        private void _SizeChanged(object sender, EventArgs e)
+        {
+            panel1.Visible = this.Width > MIN_WIDTH_TO_SHOW_HISTORY;
+        }
     }
 }
