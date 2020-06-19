@@ -24,5 +24,19 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (e.NewSize.Width < 500)
+            {
+                History.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                History.Visibility = Visibility.Visible;
+            }
+
+            //History.Visibility = (e.NewSize.Width < 500) ? Visibility.Collapsed : Visibility.Visible;
+        }
     }
 }

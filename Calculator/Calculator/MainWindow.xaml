@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" SizeChanged="Window_SizeChanged">
     <Grid>
-        <Grid x:Name="Label_Grid" Background="Aqua" HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="570">
-            <Label Name="Label" Content="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  />
+            <ColumnDefinition Width="AUTo" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid x:Name="Label_Grid" Background="Aqua" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" >
+            <TextBlock Foreground="Bisque" FontSize="20" FontWeight="ExtraBold" HorizontalAlignment="Right"  Name="Label" Text="0" VerticalAlignment="Center"/>
         </Grid>
-        <Grid x:Name="Buttons_Grid" Background="Bisque" HorizontalAlignment="Left" Height="294" VerticalAlignment="Bottom" Width="570">
-            <Button x:Name="button2" Background="Cornsilk" Content="2" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
-            <Button x:Name="button1" Background="Cornsilk" Content="1" HorizontalAlignment="Left" Margin="45,130,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
-            <Button x:Name="button3" Background="Cornsilk" Content="3" HorizontalAlignment="Left" Margin="215,130,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
-            <Button x:Name="button4" Background="Cornsilk" Content="4" HorizontalAlignment="Left" Margin="45,70,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
-            <Button x:Name="button5" Background="Cornsilk" Content="5" HorizontalAlignment="Left" Margin="130,70,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
-            <Button x:Name="btn6" Background="Cornsilk" Content="6" HorizontalAlignment="Left" Margin="215,70,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
+        <Grid Grid.Row="1" x:Name="Buttons_Grid" Background="Bisque" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
             <Button x:Name="button7" Background="Cornsilk" Content="7" HorizontalAlignment="Left" Margin="45,10,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
             <Button x:Name="button8" Background="Cornsilk" Content="8" HorizontalAlignment="Left" Margin="130,11,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
             <Button x:Name="button9" Background="Cornsilk" Content="9" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
@@ -28,10 +30,10 @@
             <Button Background="GreenYellow" Content="=" HorizontalAlignment="Left" Margin="330,20,0,0" VerticalAlignment="Top" Width="230" Height="55"/>
             <Button x:Name="buttonDel" Background="Coral" Content="DEL" HorizontalAlignment="Left" Margin="215,225,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
             <Button Background="Coral" Content="C" HorizontalAlignment="Left" Margin="35,225,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
-            <Button x:Name="" Background="GreenYellow" Content="+/-" HorizontalAlignment="Left" Margin="490,85,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
+            <Button x:Name="buttonPlus" Background="GreenYellow" Content="+/-" HorizontalAlignment="Left" Margin="490,85,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
             <Button x:Name="buttonDot" Background="GreenYellow" Content="." HorizontalAlignment="Left" Margin="490,145,0,0" VerticalAlignment="Top" Width="75" Height="55"/>
         </Grid>
-        <Grid x:Name="History" Background="Beige" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="222"/>
+        <Grid x:Name="History" Visibility="Visible" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="300"  Background="Blue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
 
     </Grid>
