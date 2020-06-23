@@ -35,5 +35,10 @@ namespace Calculator
 
             //History.Visibility = (e.NewSize.Width < 500) ? Visibility.Collapsed : Visibility.Visible;
         }
+
+        private void onButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
