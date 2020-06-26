@@ -98,23 +98,23 @@
 				<RowDefinition />
 
 			</Grid.RowDefinitions>
-			<Button Background="LightSkyBlue" Content="=" FontSize="24" Grid.Column="3" />
-			<Button Background="LightSkyBlue" Content="+" FontSize="24px" Grid.Column="3" Grid.Row="2" />
-			<Button Grid.Column="3" Grid.Row="3" Background="LightSkyBlue" Content="/" FontSize="24px"  />
-			<Button Grid.Column="3" Grid.Row="4"  Background="LightSkyBlue" Content="*" FontSize="24px"  />
-			<Button Grid.Column="3" Grid.Row="5" Background="LightSkyBlue" Content="-" FontSize="24px"  ></Button>
-			<Button Grid.ColumnSpan="3" Background="LightSkyBlue" Foreground="Red" Content="⌦" FontSize="24px"  ></Button>
+            <Button x:Name="btnEqual" Click="btnEqual_Click" Background="LightSkyBlue" Content="=" FontSize="24" Grid.Column="3" />
+            <Button x:Name="btnPlus" Click="btnOperation_Click"  Background="LightSkyBlue" Content="+" FontSize="24px" Grid.Column="3" Grid.Row="2" />
+            <Button x:Name="btnDivide" Grid.Column="3" Grid.Row="3" Click="btnOperation_Click" Background="LightSkyBlue" Content="/" FontSize="24px"  />
+            <Button x:Name="btnMulti" Grid.Column="3" Grid.Row="4"  Click="btnOperation_Click" Background="LightSkyBlue"  Content="*" FontSize="24px"  />
+            <Button x:Name="btnMinus" Grid.Column="3" Grid.Row="5" Click="btnOperation_Click" Background="LightSkyBlue" Content="-" FontSize="24px"  ></Button>
+            <Button x:Name="btnDel" Click="btnDel_Click" Grid.ColumnSpan="3" Background="LightSkyBlue" Foreground="Red" Content="⌦" FontSize="24px"  ></Button>
 
-			<Button Click="onButton_Click" Grid.Column="1" Grid.Row="5" Content="0" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="0" Grid.Row="4" Content="1" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="1" Grid.Row="4" Content="2" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="2" Grid.Row="4" Content="3" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="0" Grid.Row="3" Content="4" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="1" Grid.Row="3" Content="5" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="2" Grid.Row="3" Content="6" Style="{DynamicResource CalcButtonStyle}" />
-			<Button Click="onButton_Click" Grid.Column="0" Grid.Row="2" Content="7" Style="{DynamicResource CalcButtonStyle}"  />
-			<Button Click="onButton_Click" Grid.Column="1" Grid.Row="2" Content="8" Style="{DynamicResource CalcButtonStyle}"  />
-			<Button Click="onButton_Click" Grid.Column="2" Grid.Row="2" Content="9" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="1" Grid.Row="5" Content="0" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="0" Grid.Row="4" Content="1" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="1" Grid.Row="4" Content="2" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="2" Grid.Row="4" Content="3" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="0" Grid.Row="3" Content="4" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="1" Grid.Row="3" Content="5" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="2" Grid.Row="3" Content="6" Style="{DynamicResource CalcButtonStyle}" />
+            <Button Click="onNumericButton_Click" Grid.Column="0" Grid.Row="2" Content="7" Style="{DynamicResource CalcButtonStyle}"  />
+            <Button Click="onNumericButton_Click" Grid.Column="1" Grid.Row="2" Content="8" Style="{DynamicResource CalcButtonStyle}"  />
+            <Button Click="onNumericButton_Click" Grid.Column="2" Grid.Row="2" Content="9" Style="{DynamicResource CalcButtonStyle}" />
 
 		</Grid>
 		<Grid x:Name="History" Visibility="Visible" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="300"  Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>

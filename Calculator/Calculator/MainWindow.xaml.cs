@@ -36,9 +36,97 @@ namespace Calculator
             //History.Visibility = (e.NewSize.Width < 500) ? Visibility.Collapsed : Visibility.Visible;
         }
 
-        private void onButton_Click(object sender, RoutedEventArgs e)
+
+        private void onButton_ClickVlad(object sender, RoutedEventArgs e)
+        {
+            if (sender.Equals(btnEqual)) 
+            {
+            }
+            else if (sender.Equals(btnPlus)) 
+            {
+            }
+            else if (sender.Equals(btnDivide))
+            {
+            }
+            else if (sender.Equals(btnMulti))
+            {
+            }
+            else if (sender.Equals(btnMinus))
+            {
+            }
+            else if (sender.Equals(btnDel))
+            {
+                Console.WriteLine("Del");
+            }
+            /*
+            else if (sender.Equals(btn0))
+            {
+            }
+            else if (sender.Equals(btn1))
+            {
+            }
+            else if (sender.Equals(btn2))
+            {
+            }
+            else if (sender.Equals(btn3))
+            {
+            }
+            else if (sender.Equals(btn4))
+            {
+            }
+            else if (sender.Equals(btn5))
+            {
+            }
+            else if (sender.Equals(btn6))
+            {
+            }
+            else if (sender.Equals(btn7))
+            {
+            }
+            else if (sender.Equals(btn8))
+            {
+            }
+            else if (sender.Equals(btn9))
+            {
+            }*/
+        }
+
+        private void btnEqual_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnOperation_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            switch (btn.Name)
+            {
+                case "btnPlus":
+                   //todo
+                    break;
+                case "btnMinus":
+                    //todo
+                    break;
+                case "btnDivide":
+                    //todo
+                    break;
+                case "btnMulti":
+                    //todo
+                    break;
+            }
+        }
+
+        private void onNumericButton_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            string buttonContent = btn.Content as string;
+            int number = Convert.ToInt32(buttonContent);
+            // todo: use number
         }
     }
 }
