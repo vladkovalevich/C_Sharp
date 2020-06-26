@@ -76,8 +76,8 @@
 		</Grid.RowDefinitions>
 
 		<Grid x:Name="Label_Grid" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" >
-            <Border CornerRadius="10" BorderBrush="LightSkyBlue" BorderThickness="5">
-				<TextBlock Margin="10" Foreground="Black" FontSize="64" FontWeight="ExtraBold" HorizontalAlignment="Right"  Name="Label" Text="0" VerticalAlignment="Center"/>
+            <Border CornerRadius="2" BorderBrush="LightSkyBlue" BorderThickness="5">
+				<TextBlock Foreground="LightSkyBlue" Margin="10"  FontSize="64" FontWeight="ExtraBold" HorizontalAlignment="Right"  Name="Label" Text="0" VerticalAlignment="Center"/>
 			</Border>
 
 		</Grid>
