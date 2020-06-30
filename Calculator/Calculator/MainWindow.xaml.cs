@@ -22,6 +22,11 @@ namespace Calculator
             InitializeComponent();
         }
 
+        string action = null;
+        double double1 = 0;
+        bool isReadyToNextValue = false;
+
+
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (e.NewSize.Width < 500)
@@ -39,7 +44,7 @@ namespace Calculator
 
         private void onButton_ClickVlad(object sender, RoutedEventArgs e)
         {
-            if (sender.Equals(btnEqual)) 
+            /*if (sender.Equals(btnEqual)) 
             {
             }
             else if (sender.Equals(btnPlus)) 
@@ -93,7 +98,7 @@ namespace Calculator
 
         private void btnEqual_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
@@ -101,32 +106,39 @@ namespace Calculator
 
         }
 
+        void onAction(string value)
+        {
+            action = value;
+            isReadyToNextValue = true;
+            double1 = Convert.ToDouble(Label.Text);
+        }
+
         private void btnOperation_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
-            switch (btn.Name)
-            {
-                case "btnPlus":
-                   //todo
-                    break;
-                case "btnMinus":
-                    //todo
-                    break;
-                case "btnDivide":
-                    //todo
-                    break;
-                case "btnMulti":
-                    //todo
-                    break;
-            }
+            Button button = sender as Button;
+            onAction(button.Content as string);
         }
 
         private void onNumericButton_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            string buttonContent = btn.Content as string;
-            int number = Convert.ToInt32(buttonContent);
-            // todo: use number
+            string value = btn.Content as string;
+            if (isReadyToNextValue)
+            {
+                Label.Text = value;
+            }
+            else
+            {
+                if (Label.Text == "0")
+                {
+                    Label.Text = value.ToString();
+                }
+                else
+                {
+                    Label.Text += value;
+                }
+            }
+            isReadyToNextValue = false;
         }
     }
 }
