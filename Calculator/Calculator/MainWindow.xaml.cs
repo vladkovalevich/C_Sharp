@@ -126,6 +126,7 @@ namespace Calculator
             if (isReadyToNextValue)
             {
                 Label.Text = value;
+                valueLabel.Text = value;
             }
             else
             {

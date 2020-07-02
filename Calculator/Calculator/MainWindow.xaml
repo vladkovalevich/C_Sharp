@@ -74,15 +74,16 @@
 			<RowDefinition />
 			<RowDefinition />
 		</Grid.RowDefinitions>
-
-		<Grid x:Name="Label_Grid" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" >
-            <Border CornerRadius="2" BorderBrush="LightSkyBlue" BorderThickness="5">
-				<TextBlock Foreground="LightSkyBlue" Margin="10"  FontSize="64" FontWeight="ExtraBold" HorizontalAlignment="Right"  Name="Label" Text="0" VerticalAlignment="Center"/>
-			</Border>
+        <Border CornerRadius="2" BorderBrush="LightSkyBlue" BorderThickness="5">
+            <Grid x:Name="Label_Grid" HorizontalAlignment="Stretch" Grid.Row="0" VerticalAlignment="Stretch" >
+                <TextBlock x:Name="valueLabel" Foreground="LightSkyBlue" Text="0" FontSize="30px" ></TextBlock>
+        
+			<TextBlock Foreground="LightSkyBlue" Margin="10"  FontSize="64" FontWeight="ExtraBold" HorizontalAlignment="Right"  Name="Label" Text="0" VerticalAlignment="Center"/>
+			
 
 		</Grid>
-
-		<Grid Grid.Row="1" x:Name="Buttons_Grid" Background="Transparent" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+        </Border>
+        <Grid Grid.Row="1" x:Name="Buttons_Grid" Background="Transparent" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition />
 				<ColumnDefinition />
@@ -104,7 +105,9 @@
             <Button x:Name="btnMulti" Grid.Column="3" Grid.Row="4"  Click="btnOperation_Click" Background="LightSkyBlue"  Content="*" FontSize="24px"  />
             <Button x:Name="btnMinus" Grid.Column="3" Grid.Row="5" Click="btnOperation_Click" Background="LightSkyBlue" Content="-" FontSize="24px"  ></Button>
             <Button x:Name="btnDel" Click="btnDel_Click" Grid.ColumnSpan="3" Background="LightSkyBlue" Foreground="Red" Content="⌦" FontSize="24px"  ></Button>
-
+            <Button Content="." Name="btnDot" FontSize="24" Background="LightSkyBlue"  Grid.Column="0" Grid.Row="5" ></Button>
+            
+            
             <Button Click="onNumericButton_Click" Grid.Column="1" Grid.Row="5" Content="0" Style="{DynamicResource CalcButtonStyle}" />
             <Button Click="onNumericButton_Click" Grid.Column="0" Grid.Row="4" Content="1" Style="{DynamicResource CalcButtonStyle}" />
             <Button Click="onNumericButton_Click" Grid.Column="1" Grid.Row="4" Content="2" Style="{DynamicResource CalcButtonStyle}" />

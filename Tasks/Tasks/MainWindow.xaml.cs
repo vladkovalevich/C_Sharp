@@ -61,5 +61,17 @@ namespace Tasks
                 }
             }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+           int number = Convert.ToInt32(Input.Text);
+           Output.Text = (int)number / 10 +" "+ (int)number % 10;
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            int n = Convert.ToInt32(Input.Text);
+            Output.Text = Convert.ToString(n + 1);
+        }
     }
 }
