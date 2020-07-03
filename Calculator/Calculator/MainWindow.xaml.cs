@@ -103,7 +103,7 @@ namespace Calculator
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            string[] Noname = Label.Text.Split("");
         }
 
         void onAction(string value)
@@ -111,13 +111,11 @@ namespace Calculator
             action = value;
             isReadyToNextValue = true;
             double1 = Convert.ToDouble(Label.Text);
-            Label.Text = "";
         }
 
         private void btnOperation_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            valueLabel.Text += button.Content;
             onAction(button.Content as string);
             
         }
@@ -129,7 +127,6 @@ namespace Calculator
             if (isReadyToNextValue)
             {
                 Label.Text = value;
-                valueLabel.Text = value;
             }
             else
             {
