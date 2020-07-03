@@ -98,12 +98,35 @@ namespace Calculator
 
         private void btnEqual_Click(object sender, RoutedEventArgs e)
         {
-            
+            double result = 0;
+            double secondArgument = Convert.ToDouble(Label.Text);
+            switch (action)
+            {
+                case "+":
+                     result = double1 + secondArgument;
+                    break;
+                case "-":
+                    result = double1 - secondArgument;
+                    break;
+                case "*":
+                    result = double1 * secondArgument;
+                    break;
+                case "/":
+                    result = double1 / secondArgument;
+                    break;
+
+
+            }
+            Label.Text = Convert.ToString(result);
+
+
+
+
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            string[] Noname = Label.Text.Split("");
+            Console.WriteLine("click");
         }
 
         void onAction(string value)
@@ -140,6 +163,11 @@ namespace Calculator
                 }
             }
             isReadyToNextValue = false;
+        }
+
+        private void btnDel_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("MouseDoubleClick");
         }
     }
 }

@@ -104,7 +104,7 @@
             <Button x:Name="btnDivide" Grid.Column="3" Grid.Row="3" Click="btnOperation_Click" Background="LightSkyBlue" Content="/" FontSize="24px"  />
             <Button x:Name="btnMulti" Grid.Column="3" Grid.Row="4"  Click="btnOperation_Click" Background="LightSkyBlue"  Content="*" FontSize="24px"  />
             <Button x:Name="btnMinus" Grid.Column="3" Grid.Row="5" Click="btnOperation_Click" Background="LightSkyBlue" Content="-" FontSize="24px"  ></Button>
-            <Button x:Name="btnDel" Click="btnDel_Click" Grid.ColumnSpan="3" Background="LightSkyBlue" Foreground="Red" Content="⌦" FontSize="24px"  ></Button>
+            <Button x:Name="btnDel" Click="btnDel_Click" MouseDoubleClick="btnDel_MouseDoubleClick" Grid.ColumnSpan="3" Background="LightSkyBlue" Foreground="Red" Content="⌦" FontSize="24px"  ></Button>
             <Button Content="." Name="btnDot" FontSize="24" Background="LightSkyBlue"  Grid.Column="0" Grid.Row="5" ></Button>
             
             
