@@ -111,12 +111,15 @@ namespace Calculator
             action = value;
             isReadyToNextValue = true;
             double1 = Convert.ToDouble(Label.Text);
+            Label.Text = "";
         }
 
         private void btnOperation_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
+            valueLabel.Text += button.Content;
             onAction(button.Content as string);
+            
         }
 
         private void onNumericButton_Click(object sender, RoutedEventArgs e)
