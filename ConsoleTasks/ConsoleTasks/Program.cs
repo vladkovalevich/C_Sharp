@@ -6,6 +6,7 @@ namespace ConsoleTasks
     {
         static void Main(string[] args)
         {
+            Task1();
             //Следующее
             /*int n = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine(Convert.ToString(n + 1));*/
@@ -20,9 +21,27 @@ namespace ConsoleTasks
             Console.WriteLine(Convert.ToString(Convert.ToInt32(n[0]) - Convert.ToInt32(n[1])));*/
 
             //P и S
-            double n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(Convert.ToString(n*4 + " " + n*n)); 
+            double n = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(Convert.ToString(n*4 + " " + n*n));
+
+            Console.ReadLine();
              
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        static void Task1()
+        {
+            //todo
         }
 
     }
