@@ -26,32 +26,42 @@ namespace CosoleTask
             Console.ReadLine();*/
 
             //19 todo 30%
-            string a = Console.ReadLine();
-            int result = 0;
-            for (int i = 0; a.Length / 2 < 0; i++)
-            {
-                if (a[i] == a[-i - 1]) 
+                string a = Console.ReadLine();
+                int result = 0;
+                for (int i = 0; a.Length / 2 < 0; i++)
                 {
+                    if (a[i] == a[-i - 1]) 
+                    {
+                        result += 1;
+                    }
+                }
+                if (a.Length % 2 != 0) {
                     result += 1;
                 }
-            }
-            if (a.Length % 2 != 0) {
-                result += 1;
-            }
-            Console.WriteLine(result);
+                Console.WriteLine(result);
             //8803 100%
-            string a1 = Console.ReadLine();
-            Console.WriteLine(Convert.ToInt32(a1) + 1);
+            //string a1 = Console.ReadLine();
+            //Console.WriteLine(Convert.ToInt32(a1) + 1);
             //8809 100%
-            string a2 = Console.ReadLine();
-            string[] d = a2.Split(" ");
-            int resultd = Convert.ToInt32(d[0]) - Convert.ToInt32(d[1]);
-            Console.WriteLine(resultd);
-            //8806
-            string a3 = Console.ReadLine();
-            string[] d1 = a3.Split(" ");
-            int resultd1 = Convert.ToInt32(d1[0]) + Convert.ToInt32(d1[1]);
-            Console.WriteLine(resultd1);
+            //string a2 = Console.ReadLine();
+            //string[] d = a2.Split(" ");
+            //int resultd = Convert.ToInt32(d[0]) - Convert.ToInt32(d[1]);
+            //Console.WriteLine(resultd);
+            //8806 100%
+            //string a3 = Console.ReadLine();
+            //string[] d1 = a3.Split(" ");
+            //int resultd1 = Convert.ToInt32(d1[0]) + Convert.ToInt32(d1[1]);
+            //Console.WriteLine(resultd1);
+            //8811 100%
+            //string a4 = Console.ReadLine();
+            //string[] d2 = a4.Split(" ");
+            //int resultd2 = Convert.ToInt32(d2[0]) * Convert.ToInt32(d2[1]);
+            //Console.WriteLine(resultd2);
+            //8806 100%
+            //string a4 = Console.ReadLine();
+            //string[] d2 = a4.Split(" ");
+            //int resultd2 = Convert.ToInt32(d2[0]) - Convert.ToInt32(d2[1]);
+            //Console.WriteLine(resultd2);
         }
     }
 }
