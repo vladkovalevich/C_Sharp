@@ -14,8 +14,9 @@
         <Image Source="C:\Users\vladKo\Documents\GitHub\C_Sharp\moveTheBlock_SlidPuzzles\background-2.jpg" Grid.Row="0" Stretch="Fill"/>
 
         <Image Source="C:\Users\vladKo\Documents\GitHub\C_Sharp\moveTheBlock_SlidPuzzles\background.jpg" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Bisque" TextWrapping="Wrap" Text="0"  FontSize="50px" />
-        <TextBlock HorizontalAlignment="Right" Foreground="Bisque" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="0"  FontSize="40px"/>
-        <Button Content="Start" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="75" Background="Aquamarine"/>
+        <TextBlock x:Name="hodov_button" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Bisque" TextWrapping="Wrap" Text="0"  FontSize="50px" />
+        <TextBlock x:Name="score_btn" HorizontalAlignment="Right" Foreground="Bisque" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="0"  FontSize="40px"/>
+        <Button x:Name="btn_Start" Content="Start" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="75" Background="Aquamarine"/>
+        <Slider x:Name="slider" Value="5" Minimum="5" Maximum="100"  />
     </Grid>
 </Window>

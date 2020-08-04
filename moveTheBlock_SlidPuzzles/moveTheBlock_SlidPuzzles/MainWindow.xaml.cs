@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace moveTheBlock_SlidPuzzles
 {
@@ -20,6 +21,18 @@ namespace moveTheBlock_SlidPuzzles
         public MainWindow()
         {
             InitializeComponent();
+            Init();
+        }
+
+        void Init()
+        {
+            //string writePath = @"C:\Users\vladKo\Documents\GitHub\C_Sharp\moveTheBlock_SlidPuzzles";
+
+            //string text = score_btn.Text;
+            //using (StreamWriter sw = new StreamWriter(writePath, false, System.Text.Encoding.Default))
+            //{
+            //     sw.WriteLine(text);
+            //}
 
         }
     }
