@@ -5,18 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moveTheBlock_SlidPuzzles"
         mc:Ignorable="d"
-        Title="MainWindow" Height="423" Width="294">
-    <Grid Background="Bisque">
+        Title="MainWindow"
+        Background="Aquamarine"
+        Height="800" Width="600">
+    <Grid Background="Aquamarine"   MaxHeight="800" MaxWidth="600" MinHeight="800" MinWidth="590">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Image Source="C:\Users\vladKo\Documents\GitHub\C_Sharp\moveTheBlock_SlidPuzzles\background-2.jpg" Grid.Row="0" Stretch="Fill"/>
+        
+        <Image Source="background.jpg" Grid.Row="0" Stretch="Fill"/>
 
-        <Image Source="C:\Users\vladKo\Documents\GitHub\C_Sharp\moveTheBlock_SlidPuzzles\background.jpg" Grid.Row="1"/>
+        <Image Source="background-2.jpg" Grid.Row="1" Stretch="Fill"/>
         <TextBlock x:Name="hodov_button" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Bisque" TextWrapping="Wrap" Text="0"  FontSize="50px" />
         <TextBlock x:Name="score_btn" HorizontalAlignment="Right" Foreground="Bisque" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="0"  FontSize="40px"/>
         <Button x:Name="btn_Start" Content="Start" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="75" Background="Aquamarine"/>
-        <Slider x:Name="slider" Value="5" Minimum="5" Maximum="100"  />
+        <Slider VerticalAlignment="Top" x:Name="slider" Value="5" Minimum="5" Maximum="100" ValueChanged="slider_ValueChanged" Height="50"/>
     </Grid>
 </Window>
