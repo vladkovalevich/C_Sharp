@@ -35,10 +35,16 @@ namespace moveTheBlock_SlidPuzzles
             //}
 
         }
+        void arrangeBlocks()
+        {
+            
+        }
 
         private void start_Click(object sender, RoutedEventArgs e)
         {
-
+            arrangeBlocks();
+            Init();
         }
+
     }
 }
