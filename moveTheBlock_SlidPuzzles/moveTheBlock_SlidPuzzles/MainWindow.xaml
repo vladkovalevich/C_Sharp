@@ -5,21 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:moveTheBlock_SlidPuzzles"
         mc:Ignorable="d"
-        Title="MainWindow"
-        Background="Aquamarine"
-        Height="800" Width="600">
-    <Grid Background="Aquamarine"   MaxHeight="800" MaxWidth="600" MinHeight="800" MinWidth="590">
+        Title="Move The Block"
+        MaxHeight="850" MaxWidth="600" MinHeight="850" MinWidth="600"
+        Height="850" Width="600">
+    <Grid Height="850" Width="600">
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="3*"/>
+            <RowDefinition/>
+            <RowDefinition Height="600"/>
         </Grid.RowDefinitions>
-        
-        <Image Source="background.jpg" Grid.Row="0" Stretch="Fill"/>
+        <Button Height="100" VerticalAlignment="Bottom" Background="Aquamarine" Content="Start" FontSize="56" Click="start_Click"/>
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
 
-        <Image Source="background-2.jpg" Grid.Row="1" Stretch="Fill"/>
-        <TextBlock x:Name="hodov_button" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Bisque" TextWrapping="Wrap" Text="0"  FontSize="50px" />
-        <TextBlock x:Name="score_btn" HorizontalAlignment="Right" Foreground="Bisque" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="0"  FontSize="40px"/>
-        <Button x:Name="btn_Start" Content="Start" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="75" Background="Aquamarine"/>
-        <Slider VerticalAlignment="Top" x:Name="slider" Value="5" Minimum="5" Maximum="100" ValueChanged="slider_ValueChanged" Height="50"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        
     </Grid>
 </Window>

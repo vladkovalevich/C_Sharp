@@ -36,7 +36,7 @@ namespace moveTheBlock_SlidPuzzles
 
         }
 
-        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void start_Click(object sender, RoutedEventArgs e)
         {
 
         }
