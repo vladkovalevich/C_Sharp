@@ -30,7 +30,7 @@ namespace CosoleTask
                 int result = 0;
                 for (int i = 0; a.Length / 2 < 0; i++)
                 {
-                    if (a[i] == a[-i - 1]) 
+                if (a[i] == a[a.Length -i]) 
                     {
                         result += 1;
                     }
