@@ -25,20 +25,21 @@ namespace CosoleTask
 
             Console.ReadLine();*/
 
-            //19 todo 30%
-                string a = Console.ReadLine();
-                int result = 0;
-                for (int i = 0; a.Length / 2 < 0; i++)
-                {
-                if (a[i] == a[a.Length -i]) 
-                    {
-                        result += 1;
-                    }
-                }
-                if (a.Length % 2 != 0) {
-                    result += 1;
-                }
-                Console.WriteLine(result);
+            //19 todo 100%
+               // string a = Console.ReadLine();
+          //      int result = 0;
+            //    for (int i = 0; a.Length / 2 < 0; i++)
+              //  {
+      //          if (a[i] == a.Length - (i+1)) 
+        //            {
+          //              result += 1;
+            //        }
+              //  }
+               // if (a.Length % 2 != 0) {
+                   // result += 1;
+               // }
+                //Console.WriteLine(result);
+
             //8803 100%
             //string a1 = Console.ReadLine();
             //Console.WriteLine(Convert.ToInt32(a1) + 1);
@@ -62,6 +63,14 @@ namespace CosoleTask
             //string[] d2 = a4.Split(" ");
             //int resultd2 = Convert.ToInt32(d2[0]) - Convert.ToInt32(d2[1]);
             //Console.WriteLine(resultd2);
+            //
+            string a = Console.ReadLine();
+            string v = Console.ReadLine();
+            string[] b = v.Split("");
+            if (Convert.ToInt32(b[0]+b[1]+b[2]) == 3000) {
+                Console.WriteLine("Error");
+            }
+
         }
     }
 }
