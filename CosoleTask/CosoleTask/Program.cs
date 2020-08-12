@@ -45,7 +45,7 @@ namespace CosoleTask
 			int W1 = Convert.ToInt32(z2[0]);
 			int H1 = Convert.ToInt32(z2[0]);
 
-			if (L >= 1000 || W >= 1000 || H >= 1000) 
+			if (L >= 1000 || W >= 1000 || H >= 1000 || hz >= 1000) 
 			{
 				Console.WriteLine("error");
 				return;
