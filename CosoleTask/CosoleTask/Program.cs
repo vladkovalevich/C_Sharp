@@ -32,7 +32,8 @@ namespace CosoleTask
 			*/
 
 			//500 new
-			/*int hz = Convert.ToInt32(Console.ReadLine());
+			
+			int hz = Convert.ToInt32(Console.ReadLine());
 			string[] z1 = Console.ReadLine().Split(" ");
 			string[] z2 = Console.ReadLine().Split(" ");
 
@@ -56,8 +57,8 @@ namespace CosoleTask
 			}
 			double s = 2 * (W * L) * H;
 			s = s / 16;
-			double result = Math.Round(s);
-			*/
+			double result = Math.Ceiling(s);
+			Console.WriteLine(result);
 
 			//8801
 			/*
