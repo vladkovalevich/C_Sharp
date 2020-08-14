@@ -6,11 +6,11 @@ namespace CosoleTask
 	{
 		static void Main(string[] args)
 		{
-			task1();
+			task500();
 
 			/*-----------------------------------------------------------------*/
 
-			void task1() 
+			void task1()
 			{
 				string a = Console.ReadLine();
 				string[] q = a.Split(" ");
@@ -18,7 +18,7 @@ namespace CosoleTask
 			}
 
 
-			void task19() 
+			void task19()
 			{
 				string a = Console.ReadLine();
 				int result = 0;
@@ -36,7 +36,7 @@ namespace CosoleTask
 				Console.WriteLine(result);
 			}
 
-			void task8801() 
+			void task8801()
 			{
 				int n = Convert.ToInt32(Console.ReadLine());
 				Console.WriteLine(Convert.ToString(n + 1));
@@ -121,35 +121,28 @@ namespace CosoleTask
 
 			void task500()
 			{
-				int hz = Convert.ToInt32(Console.ReadLine());
-				string[] z1 = Console.ReadLine().Split(" ");
-				string[] z2 = Console.ReadLine().Split(" ");
-
-				int L = Convert.ToInt32(z1[0]);
-				int W = Convert.ToInt32(z1[0]);
-				int H = Convert.ToInt32(z1[0]);
-
-				int L1 = Convert.ToInt32(z2[0]);
-				int W1 = Convert.ToInt32(z2[0]);
-				int H1 = Convert.ToInt32(z2[0]);
-
-				if (L >= 1000 || W >= 1000 || H >= 1000 || hz >= 1000)
+				int orders = Convert.ToInt32(Console.ReadLine());
+				for (int i = 0; i < orders; i++)
 				{
-					Console.WriteLine("error");
-					return;
+					string[] z1 = Console.ReadLine().Split(" ");
+
+					int L = Convert.ToInt32(z1[0]);
+					int W = Convert.ToInt32(z1[1]);
+					int H = Convert.ToInt32(z1[2]);
+
+					if (L > 1000 || W > 1000 || H > 1000)
+					{
+						Console.WriteLine("error");
+						return;
+					}
+
+					double s = 2 * (W + L) * H;
+					s = s / 16;
+					double result = Math.Ceiling(s);
+					Console.WriteLine(result);
 				}
-				if (L1 >= 1000 || W1 >= 1000 || H1 >= 1000)
-				{
-					Console.WriteLine("error");
-					return;
-				}
-				double s = 2 * (W * L) * H;
-				s = s / 16;
-				double result = Math.Ceiling(s);
-				Console.WriteLine(result);
 			}
-
-
 		}
 	}
+
 }
