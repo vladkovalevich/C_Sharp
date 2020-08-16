@@ -6,7 +6,7 @@ namespace CosoleTask
 	{
 		static void Main(string[] args)
 		{
-			task500();
+			task8812();
 
 			/*-----------------------------------------------------------------*/
 
@@ -17,7 +17,7 @@ namespace CosoleTask
 				Console.WriteLine(q);
 			}
 
-
+	        
 			void task19()
 			{
 				string a = Console.ReadLine();
@@ -102,6 +102,14 @@ namespace CosoleTask
 				string[] d2 = a4.Split(" ");
 				int resultd2 = Convert.ToInt32(d2[0]) * Convert.ToInt32(d2[1]);
 				Console.WriteLine(resultd2);
+			}
+
+			void task8812()
+			{
+				string[] a = Console.ReadLine().Split(" ");
+				int P = 2 * (Convert.ToInt32(a[0]) + Convert.ToInt32(a[1]));
+				int S = Convert.ToInt32(a[0]) *Convert.ToInt32(a[1]);
+				Console.WriteLine(Convert.ToString(P) + " " + Convert.ToString(S));
 			}
 
 			void task8814()
