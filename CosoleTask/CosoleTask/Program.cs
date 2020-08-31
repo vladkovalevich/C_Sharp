@@ -6,7 +6,60 @@ namespace CosoleTask
 	{
 		static void Main(string[] args)
 		{
-			task8812();
+			run(500);
+			void run()
+			{
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			/*-----------------------------------------------------------------*/
 
@@ -16,8 +69,14 @@ namespace CosoleTask
 				string[] q = a.Split(" ");
 				Console.WriteLine(q);
 			}
+		    void task2()
+			{
+				string n = Convert.ToInt32(Console.ReadLine().Length);
+				Console.WriteLine(n+1);
+			}
+			void task
 
-	        
+
 			void task19()
 			{
 				string a = Console.ReadLine();
@@ -35,10 +94,32 @@ namespace CosoleTask
 				}
 				Console.WriteLine(result);
 			}
-
+			void task907() 
+			{
+				//todo 50%
+				int howNumbers = Convert.ToInt32(Console.ReadLine());
+				string[] numbers = Console.ReadLine().Split();
+				string result = " ";
+				int result1 = 0;
+				for (int i = 0; howNumbers > i;)
+				{
+					i++;
+					if (Convert.ToDouble(numbers[i]) < 2.5)
+					{
+						result = numbers[i];
+						result1 = i;
+						Console.WriteLine(Convert.ToString(i) + " " + result);
+						break;
+					}
+				}
+				if (result1 == 0)
+				{
+					Console.WriteLine("Not Found");
+				}
+			}
 			void task8801()
 			{
-				int n = Convert.ToInt32(Console.ReadLine());
+				ToInt32(Console.ReadLine());
 				Console.WriteLine(Convert.ToString(n + 1));
 			}
 
@@ -96,6 +177,12 @@ namespace CosoleTask
 				Console.WriteLine(Convert.ToString(Convert.ToInt32(n[0]) - Convert.ToInt32(n[1])));
 			}
 
+			void task8810()
+			{
+				string[] n1 = Console.ReadLine();
+				Console.WriteLine(Convert.ToInt32(n[0])+Convert.ToInt32(n[1])-Convert.ToInt32(n[2]));
+			}
+
 			void task8811()
 			{
 				string a4 = Console.ReadLine();
@@ -110,6 +197,10 @@ namespace CosoleTask
 				int P = 2 * (Convert.ToInt32(a[0]) + Convert.ToInt32(a[1]));
 				int S = Convert.ToInt32(a[0]) *Convert.ToInt32(a[1]);
 				Console.WriteLine(Convert.ToString(P) + " " + Convert.ToString(S));
+			}
+			void task8813()
+			{
+				
 			}
 
 			void task8814()
