@@ -6,60 +6,7 @@ namespace CosoleTask
 	{
 		static void Main(string[] args)
 		{
-			run(500);
-			void run()
-			{
-
-			}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			task7366();
 
 			/*-----------------------------------------------------------------*/
 
@@ -71,10 +18,15 @@ namespace CosoleTask
 			}
 		    void task2()
 			{
-				string n = Convert.ToInt32(Console.ReadLine().Length);
+				int n = Console.ReadLine().Length;
 				Console.WriteLine(n+1);
 			}
-			void task
+			void task7366()
+			{
+				/*Console.log(n/86400 + " " + (n%86400)/3600 + " " + ((n%86400)%3600)/60 + " " + n%60);*/
+				int n = Convert.ToInt32(Console.ReadLine());5
+				Console.WriteLine(n/86400 + " " + (n%86400)/3600 + " " + ((n%86400)%3600)/60 + " " + n%60);
+			}
 
 
 			void task19()
@@ -119,7 +71,7 @@ namespace CosoleTask
 			}
 			void task8801()
 			{
-				ToInt32(Console.ReadLine());
+				int n = Convert.ToInt32(Console.ReadLine());
 				Console.WriteLine(Convert.ToString(n + 1));
 			}
 
@@ -179,7 +131,7 @@ namespace CosoleTask
 
 			void task8810()
 			{
-				string[] n1 = Console.ReadLine();
+				string[] n = Console.ReadLine().Split(" ");
 				Console.WriteLine(Convert.ToInt32(n[0])+Convert.ToInt32(n[1])-Convert.ToInt32(n[2]));
 			}
 
