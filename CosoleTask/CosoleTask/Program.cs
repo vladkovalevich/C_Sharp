@@ -24,7 +24,7 @@ namespace CosoleTask
 			void task7366()
 			{
 				/*Console.log(n/86400 + " " + (n%86400)/3600 + " " + ((n%86400)%3600)/60 + " " + n%60);*/
-				int n = Convert.ToInt32(Console.ReadLine());5
+				int n = Convert.ToInt32(Console.ReadLine());
 				Console.WriteLine(n/86400 + " " + (n%86400)/3600 + " " + ((n%86400)%3600)/60 + " " + n%60);
 			}
 
