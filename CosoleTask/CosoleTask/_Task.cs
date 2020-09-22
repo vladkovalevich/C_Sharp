@@ -105,12 +105,36 @@ namespace CosoleTask
 			Console.WriteLine(n + 1);
 		}
 
+		void task904() 
+		{
+			int n = Convert.ToInt32(Console.ReadLine());
+			string[] str1 = Console.ReadLine().Split(" ");
+			string str = "";
+			for (int i = 0; i < n; i++) 
+			{
+				if (Convert.ToInt32(str1[i]) > 0)
+				{
+					str = str + Convert.ToString(Convert.ToInt32(str1[i]) + 2) + " ";
+				}
+				else 
+				{
+					str = str + str1[i] + " ";
+				}
+			}
+			Console.WriteLine(str);
+		}
+
 		void task586()
 		{
-			double h1 = Convert.ToDouble(Console.ReadLine());
+
+			//todo
+
+
+
+			/*double h1 = Convert.ToDouble(Console.ReadLine());
 			double m1 = Convert.ToDouble(Console.ReadLine());
 			double h2 = Convert.ToDouble(Console.ReadLine());
-			double m2 = Convert.ToDouble(Console.ReadLine());
+			double m2 = Convert.ToDouble(Console.ReadLine());*/
 
 			/*string[] hr1 = h1.Split();
 			string[] mn1 = h1.Split();
