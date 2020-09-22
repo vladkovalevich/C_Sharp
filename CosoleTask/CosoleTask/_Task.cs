@@ -82,6 +82,9 @@ namespace CosoleTask
 				case 500:
 					task8805();
 					break;
+				default:
+					Console.WriteLine("no such task");
+					break;
 			}
         }
 
