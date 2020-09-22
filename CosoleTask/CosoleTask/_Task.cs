@@ -16,8 +16,8 @@ namespace CosoleTask
 				case 2:
 					task2();
 					break;
-				case 0:
-					task();
+				case 586:
+					task586();
 					break;
 				case 5:
 					task5();
@@ -98,15 +98,24 @@ namespace CosoleTask
 			string[] q = a.Split(" ");
 			Console.WriteLine(q);
 		}
+
 		void task2()
 		{
 			int n = Console.ReadLine().Length;
 			Console.WriteLine(n + 1);
 		}
 
-		void task()
+		void task586()
 		{
+			double h1 = Convert.ToDouble(Console.ReadLine());
+			double m1 = Convert.ToDouble(Console.ReadLine());
+			double h2 = Convert.ToDouble(Console.ReadLine());
+			double m2 = Convert.ToDouble(Console.ReadLine());
 
+			/*string[] hr1 = h1.Split();
+			string[] mn1 = h1.Split();
+			string[] hr2 = h1.Split();
+			string[] mn2 = h1.Split();*/
 		}
 
 		void task5()
@@ -121,7 +130,6 @@ namespace CosoleTask
 			int n = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine(n / 86400 + " " + (n % 86400) / 3600 + " " + ((n % 86400) % 3600) / 60 + " " + n % 60);
 		}
-
 
 		void task19()
 		{
@@ -250,7 +258,7 @@ namespace CosoleTask
 		}
 		void task8813()
 		{
-
+			//todo
 		}
 
 		void task8814()
@@ -266,7 +274,6 @@ namespace CosoleTask
 			string b = Console.ReadLine();
 			Console.WriteLine(Convert.ToInt32(a) ^ Convert.ToInt32(b));
 		}
-
 
 		void task500()
 		{
