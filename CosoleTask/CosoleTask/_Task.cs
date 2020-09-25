@@ -10,6 +10,9 @@ namespace CosoleTask
         {
             switch (id) 
             {
+				case 904:
+					task904();
+					break;
 				case 1:
 					task1();
 					break;
@@ -94,15 +97,14 @@ namespace CosoleTask
 
 		void task1()
 		{
-			string a = Console.ReadLine();
-			string[] q = a.Split(" ");
-			Console.WriteLine(q);
+			int number = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("{0} {1}", (int)number / 10, (int)number % 10);
 		}
 
 		void task2()
 		{
 			int n = Console.ReadLine().Length;
-			Console.WriteLine(n + 1);
+			Console.WriteLine(n);
 		}
 
 		void task904() 
@@ -179,10 +181,10 @@ namespace CosoleTask
 			string[] numbers = Console.ReadLine().Split();
 			string result = " ";
 			int result1 = 0;
-			for (int i = 0; howNumbers > i;)
+			for (int i = 0; howNumbers > i; i++)
 			{
-				i++;
-				if (Convert.ToDouble(numbers[i]) < 2.5)
+				
+				if (Convert.ToDouble(numbers[i]) > 2.5)
 				{
 					result = numbers[i];
 					result1 = i;
@@ -202,13 +204,13 @@ namespace CosoleTask
 		void task8801()
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine(Convert.ToString(n + 1));
+			Console.WriteLine(n + 1);
 		}
 
 		void task8802()
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine(Convert.ToString(n - 1));
+			Console.WriteLine(n - 1);
 		}
 		void task8803()
 		{
@@ -242,7 +244,7 @@ namespace CosoleTask
 		void task8807()
 		{
 			string a2 = Console.ReadLine();
-			Console.WriteLine(Convert.ToInt32(a2) - (Convert.ToInt32(a2) * 2));
+			Console.WriteLine("-"+a2);
 		}
 
 		void task8808()
@@ -282,7 +284,10 @@ namespace CosoleTask
 		}
 		void task8813()
 		{
-			//todo
+			string[] a = Console.ReadLine().Split(" ");
+			int P = 2 * (Convert.ToInt32(a[0]) * Convert.ToInt32(a[1])+ Convert.ToInt32(a[1]) * Convert.ToInt32(a[2])+ Convert.ToInt32(a[0]) * Convert.ToInt32(a[2]));
+			int S = Convert.ToInt32(a[0]) * Convert.ToInt32(a[1]) * Convert.ToInt32(a[2]);
+			Console.WriteLine(Convert.ToString(P) + " " + Convert.ToString(S));
 		}
 
 		void task8814()
