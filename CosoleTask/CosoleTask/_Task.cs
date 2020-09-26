@@ -103,8 +103,9 @@ namespace CosoleTask
 
 		void task1()
 		{
-			int number = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("{0} {1}", (int)number / 10, (int)number % 10);
+			string number = Console.ReadLine();
+			//Console.WriteLine("{0} {1}", (int)number / 10, (int)number % 10);
+			Console.WriteLine(number[0]+" "+number[1]);
 		}
 
 		void task2()
