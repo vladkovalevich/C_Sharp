@@ -13,6 +13,9 @@ namespace CosoleTask
 				case 904:
 					task904();
 					break;
+				case 923:
+					task923();
+					break;
 				case 1:
 					task1();
 					break;
