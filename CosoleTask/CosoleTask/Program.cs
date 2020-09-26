@@ -12,3 +12,17 @@ namespace CosoleTask
 	}
 
 }
+/*
+using System;
+
+namespace CosoleTask
+{	
+	class Program
+	{
+		static void Main(string[] args)
+		{
+        }
+    }
+}
+ * 
+ */

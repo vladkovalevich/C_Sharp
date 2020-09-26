@@ -19,8 +19,8 @@ namespace CosoleTask
 				case 2:
 					task2();
 					break;
-				case 586:
-					task586();
+				case 583:
+					task583();
 					break;
 				case 5:
 					task5();
@@ -42,6 +42,9 @@ namespace CosoleTask
 					break;
 				case 8802:
 					task8802();
+					break;
+				case 902:
+					task902();
 					break;
 				case 8803:
 					task8803();
@@ -107,6 +110,43 @@ namespace CosoleTask
 			Console.WriteLine(n);
 		}
 
+		void task902() 
+		{
+			int n = Convert.ToInt32(Console.ReadLine());
+			if (n > 0)
+			{
+				if (n < 3)
+				{
+					Console.WriteLine("Initial");
+				}
+			}
+			
+			if (n > 4) 
+			{
+				if (n < 6) 
+				{
+					Console.WriteLine("Average");
+				}
+			}
+
+			if (n > 7)
+			{
+				if (n < 9)
+				{
+					Console.WriteLine("Sufficient");
+				}
+			}
+
+			if (n > 10)
+			{
+				if (n < 12)
+				{
+					Console.WriteLine("High");
+				}
+			}
+
+		}
+
 		void task904() 
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
@@ -126,22 +166,64 @@ namespace CosoleTask
 			Console.WriteLine(str);
 		}
 
-		void task586()
+		void task923() 
 		{
+			int n = Convert.ToInt32(Console.ReadLine());
+			switch (n) 
+			{
+				case 1:
+					Console.WriteLine("Winter");
+					break;
+				case 2:
+					Console.WriteLine("Winter");
+					break;
+				case 3:
+					Console.WriteLine("Spring");
+					break;
+				case 4:
+					Console.WriteLine("Spring");
+					break;
+				case 5:
+					Console.WriteLine("Spring");
+					break;
+				case 6:
+					Console.WriteLine("Summer");
+					break;
+				case 7:
+					Console.WriteLine("Summer");
+					break;
+				case 8:
+					Console.WriteLine("Summer");
+					break;
+				case 9:
+					Console.WriteLine("Autumn");
+					break;
+				case 10:
+					Console.WriteLine("Autumn");
+					break;
+				case 11:
+					Console.WriteLine("Autumn");
+					break;
+				case 12:
+					Console.WriteLine("Winter");
+					break;
 
-			//todo
 
+			}
+		}
 
+		void task583()
+		{
+			var a1 = DateTime.Parse(Console.ReadLine());
+			var b1 = DateTime.Parse(Console.ReadLine());
 
-			/*double h1 = Convert.ToDouble(Console.ReadLine());
-			double m1 = Convert.ToDouble(Console.ReadLine());
-			double h2 = Convert.ToDouble(Console.ReadLine());
-			double m2 = Convert.ToDouble(Console.ReadLine());*/
+			var a2 = DateTime.Parse(Console.ReadLine());
+			var b2 = DateTime.Parse(Console.ReadLine());
 
-			/*string[] hr1 = h1.Split();
-			string[] mn1 = h1.Split();
-			string[] hr2 = h1.Split();
-			string[] mn2 = h1.Split();*/
+			var hours = a1 - b2;
+			var hours2 = b1 - a2;
+			var result = (hours - hours2) / 2;
+			Console.WriteLine(result);
 		}
 
 		void task5()
