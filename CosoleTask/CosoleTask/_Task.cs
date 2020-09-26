@@ -158,13 +158,13 @@ namespace CosoleTask
 			string str = "";
 			for (int i = 0; i < n; i++) 
 			{
-				if (Convert.ToInt32(str1[i]) > 0)
+				if (Convert.ToInt32(str1[i]) <= 0)
 				{
-					str = str + Convert.ToString(Convert.ToInt32(str1[i]) + 2) + " ";
+					str = str + str1[i] + " ";
 				}
 				else 
 				{
-					str = str + str1[i] + " ";
+					str = str + Convert.ToString(Convert.ToInt32(str1[i]) + 2) + " ";
 				}
 			}
 			Console.WriteLine(str);
