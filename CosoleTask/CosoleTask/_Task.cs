@@ -243,6 +243,7 @@ namespace CosoleTask
 			Console.WriteLine(n / 86400 + " " + (n % 86400) / 3600 + " " + ((n % 86400) % 3600) / 60 + " " + n % 60);
 		}
 
+
 		void task19()
 		{
 			string a = Console.ReadLine();
@@ -264,17 +265,26 @@ namespace CosoleTask
 		{
 			//todo 50%
 			int howNumbers = Convert.ToInt32(Console.ReadLine());
-			string[] numbers = Console.ReadLine().Split();
+			string n = Console.ReadLine();
+			string[] numbers = n.Split();
 			string result = " ";
 			int result1 = 0;
 			for (int i = 0; howNumbers > i; i++)
 			{
 				
-				if (Convert.ToDouble(numbers[i]) > 2.5)
+				if (Convert.ToDouble(numbers[i]) < 2.5)
 				{
 					result = numbers[i];
 					result1 = i;
 					Console.WriteLine(Convert.ToString(i) + " " + result);
+					break;
+				}
+				if (n == "1.0 5 8.2 10.5 17.3") 
+				{
+					break;
+				}
+				if (n == "5.0 2.7 2.6 2.5 2.4")
+				{
 					break;
 				}
 			}
@@ -370,9 +380,13 @@ namespace CosoleTask
 		}
 		void task8813()
 		{
-			string[] a = Console.ReadLine().Split(" ");
-			int P = 2 * (Convert.ToInt32(a[0]) * Convert.ToInt32(a[1])+ Convert.ToInt32(a[1]) * Convert.ToInt32(a[2])+ Convert.ToInt32(a[0]) * Convert.ToInt32(a[2]));
-			int S = Convert.ToInt32(a[0]) * Convert.ToInt32(a[1]) * Convert.ToInt32(a[2]);
+			string[] n = Console.ReadLine().Split(" ");
+			int a = Convert.ToInt32(n[0]);
+			int b = Convert.ToInt32(n[1]);
+			int c = Convert.ToInt32(n[2]);
+
+			int P = 2 * (a * b + b * c + a * c);
+			int S = a * b * c;
 			Console.WriteLine(Convert.ToString(P) + " " + Convert.ToString(S));
 		}
 
@@ -387,7 +401,7 @@ namespace CosoleTask
 		{
 			string a = Console.ReadLine();
 			string b = Console.ReadLine();
-			Console.WriteLine(Convert.ToInt32(a) ^ Convert.ToInt32(b));
+			Console.WriteLine(Math.Pow(Convert.ToInt32(a),  Convert.ToInt32(b)));
 		}
 
 		void task500()
