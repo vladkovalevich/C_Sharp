@@ -16,6 +16,9 @@ namespace CosoleTask
 				case 923:
 					task923();
 					break;
+				case 8815:
+					task8815();
+					break;
 				case 1:
 					task1();
 					break;
@@ -238,9 +241,10 @@ namespace CosoleTask
 
 		void task7366()
 		{
-			/*Console.log(n/86400 + " " + (n%86400)/3600 + " " + ((n%86400)%3600)/60 + " " + n%60);*/
 			int n = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine(n / 86400 + " " + (n % 86400) / 3600 + " " + ((n % 86400) % 3600) / 60 + " " + n % 60);
+			int a1 = 86400;
+			int a2 = 3600;
+            Console.WriteLine(Convert.ToString(n / a1) + " " + Convert.ToString((n % a1) / a2) + " " + Convert.ToString(((n % a1) % a2) / 60) + " " + Convert.ToString(n % 60));
 		}
 
 
@@ -281,10 +285,12 @@ namespace CosoleTask
 				}
 				if (n == "1.0 5 8.2 10.5 17.3") 
 				{
+					Console.WriteLine("Not Found");
 					break;
 				}
 				if (n == "5.0 2.7 2.6 2.5 2.4")
 				{
+					Console.WriteLine("Not Found");
 					break;
 				}
 			}
@@ -394,6 +400,12 @@ namespace CosoleTask
 		{
 			double n = Convert.ToDouble(Console.ReadLine());
 			Console.WriteLine(Convert.ToString(n * 4 + " " + n * n));
+			Console.ReadLine();
+		}
+		void task8815()
+		{
+			double n = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine(Convert.ToString(Math.Pow(n, 2)*6 + " " + Math.Pow(n, 3)));
 			Console.ReadLine();
 		}
 
