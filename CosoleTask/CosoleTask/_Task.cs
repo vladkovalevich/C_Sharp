@@ -80,19 +80,19 @@ namespace CosoleTask
 					task8811();
 					break;
 				case 8812:
-					task8805();
+					task8812();
 					break;
 				case 8813:
-					task8805();
+					task8813();
 					break;
 				case 8814:
-					task8805();
+					task8814();
 					break;
 				case 8816:
 					task8816();
 					break;
 				case 500:
-					task8805();
+					task500();
 					break;
 				default:
 					Console.WriteLine("no such task");
@@ -115,6 +115,7 @@ namespace CosoleTask
 		{
 			int n = Console.ReadLine().Length;
 			Console.WriteLine(n);
+			Console.ReadLine();
 		}
 
 		void task902() 
@@ -157,7 +158,7 @@ namespace CosoleTask
 		void task904() 
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
-			string[] str1 = Console.ReadLine().Split(" ");
+			string[] str1 = Console.ReadLine().Split(' ');
 			string str = "";
 			for (int i = 0; i < n; i++) 
 			{
@@ -229,7 +230,7 @@ namespace CosoleTask
 
 			var hours = a1 - b2;
 			var hours2 = b1 - a2;
-			var result = (hours - hours2) / 2;
+			var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
 			Console.WriteLine(result);
 		}
 
@@ -330,7 +331,7 @@ namespace CosoleTask
 		void task8805()
 		{
 			string a4 = Console.ReadLine();
-			string[] d2 = a4.Split(" ");
+			string[] d2 = a4.Split(' ');
 			int resultd2 = Convert.ToInt32(d2[0]) + Convert.ToInt32(d2[1]);
 			Console.WriteLine(resultd2);
 		}
@@ -338,7 +339,7 @@ namespace CosoleTask
 		void task8806()
 		{
 			string a3 = Console.ReadLine();
-			string[] d1 = a3.Split(" ");
+			string[] d1 = a3.Split(' ');
 			int resultd1 = Convert.ToInt32(d1[0]) + Convert.ToInt32(d1[1]);
 			Console.WriteLine(resultd1);
 		}
@@ -359,34 +360,34 @@ namespace CosoleTask
 		void task8809()
 		{
 			string s = Console.ReadLine();
-			string[] n = s.Split(" ");
+			string[] n = s.Split(' ');
 			Console.WriteLine(Convert.ToString(Convert.ToInt32(n[0]) - Convert.ToInt32(n[1])));
 		}
 
 		void task8810()
 		{
-			string[] n = Console.ReadLine().Split(" ");
+			string[] n = Console.ReadLine().Split(' ');
 			Console.WriteLine(Convert.ToInt32(n[0]) + Convert.ToInt32(n[1]) - Convert.ToInt32(n[2]));
 		}
 
 		void task8811()
 		{
 			string a4 = Console.ReadLine();
-			string[] d2 = a4.Split(" ");
+			string[] d2 = a4.Split(' ');
 			int resultd2 = Convert.ToInt32(d2[0]) * Convert.ToInt32(d2[1]);
 			Console.WriteLine(resultd2);
 		}
 
 		void task8812()
 		{
-			string[] a = Console.ReadLine().Split(" ");
+			string[] a = Console.ReadLine().Split(' ');
 			int P = 2 * (Convert.ToInt32(a[0]) + Convert.ToInt32(a[1]));
 			int S = Convert.ToInt32(a[0]) * Convert.ToInt32(a[1]);
 			Console.WriteLine(Convert.ToString(P) + " " + Convert.ToString(S));
 		}
 		void task8813()
 		{
-			string[] n = Console.ReadLine().Split(" ");
+			string[] n = Console.ReadLine().Split(' ');
 			int a = Convert.ToInt32(n[0]);
 			int b = Convert.ToInt32(n[1]);
 			int c = Convert.ToInt32(n[2]);
@@ -421,7 +422,7 @@ namespace CosoleTask
 			int orders = Convert.ToInt32(Console.ReadLine());
 			for (int i = 0; i < orders; i++)
 			{
-				string[] z1 = Console.ReadLine().Split(" ");
+				string[] z1 = Console.ReadLine().Split(' ');
 
 				int L = Convert.ToInt32(z1[0]);
 				int W = Convert.ToInt32(z1[1]);
