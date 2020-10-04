@@ -241,7 +241,7 @@ namespace CosoleTask
 		void task7366()
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
-			TimeSpan time1 = new TimeSpan(n);
+			TimeSpan time1 = TimeSpan.FromSeconds(n);
 			Console.WriteLine("{0} {1} {2} {3}", time1.Days, time1.Hours, time1.Minutes, time1.Seconds);
 			Console.ReadLine();
 		}
