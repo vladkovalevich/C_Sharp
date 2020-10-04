@@ -157,22 +157,20 @@ namespace CosoleTask
 
 		void task904() 
 		{
-			int n = Convert.ToInt32(Console.ReadLine());
-			string[] str1 = Console.ReadLine().Split(' ');
-			string str = "";
-			for (int i = 0; i < n; i++) 
-			{
-				if (Convert.ToInt32(str1[i]) <= 0)
-				{
-					str = str + str1[i] + " ";
-				}
-				else 
-				{
-					str = str + Convert.ToString(Convert.ToInt32(str1[i]) + 2) + " ";
-				}
-			}
-			Console.WriteLine(str);
-		}
+            int n = Convert.ToInt32(Console.ReadLine());
+            string[] str1 = Console.ReadLine().Split(" ");
+            for (int i = 0; i < n; i++)
+            {
+                if (Convert.ToInt32(str1[i]) >= 0)
+                {
+                    Console.Write(Convert.ToString(Convert.ToInt32(str1[i]) + 2) + " ");
+                }
+                else
+                {
+                    Console.Write(str1[i] + " ");
+                }
+            }
+        }
 
 		void task923() 
 		{
@@ -243,9 +241,9 @@ namespace CosoleTask
 		void task7366()
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
-			int a1 = 86400;
-			int a2 = 3600;
-            Console.WriteLine(Convert.ToString(n / a1) + " " + Convert.ToString((n % a1) / a2) + " " + Convert.ToString(((n % a1) % a2) / 60) + " " + Convert.ToString(n % 60));
+			TimeSpan time1 = new TimeSpan(n);
+			Console.WriteLine("{0} {1} {2} {3}", time1.Days, time1.Hours, time1.Minutes, time1.Seconds);
+			Console.ReadLine();
 		}
 
 
