@@ -69,6 +69,9 @@ namespace CosoleTask
 					break;
 				case 8808:
 					task8808();
+                    break;
+                case 1287:
+                    task1287();
 					break;
 				case 8809:
 					task8809();
@@ -178,35 +181,21 @@ namespace CosoleTask
 			switch (n) 
 			{
 				case 1:
-					Console.WriteLine("Winter");
-					break;
-				case 2:
+                case 2:
 					Console.WriteLine("Winter");
 					break;
 				case 3:
-					Console.WriteLine("Spring");
-					break;
-				case 4:
-					Console.WriteLine("Spring");
-					break;
-				case 5:
+                case 4:
+                case 5:
 					Console.WriteLine("Spring");
 					break;
 				case 6:
-					Console.WriteLine("Summer");
-					break;
 				case 7:
-					Console.WriteLine("Summer");
-					break;
 				case 8:
 					Console.WriteLine("Summer");
 					break;
 				case 9:
-					Console.WriteLine("Autumn");
-					break;
 				case 10:
-					Console.WriteLine("Autumn");
-					break;
 				case 11:
 					Console.WriteLine("Autumn");
 					break;
@@ -226,10 +215,10 @@ namespace CosoleTask
 			var a2 = DateTime.Parse(Console.ReadLine());
 			var b2 = DateTime.Parse(Console.ReadLine());
 
-			var hours = a1 - b2;
-			var hours2 = b1 - a2;
+			var hours = b2 - a1;
+			var hours2 = a2 - b1;
 			var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
-			Console.WriteLine(result);
+			Console.WriteLine(result.ToString(@"hh\mm"));
 		}
 
 		void task5()
