@@ -158,7 +158,7 @@ namespace CosoleTask
 		void task904() 
 		{
             int n = Convert.ToInt32(Console.ReadLine());
-            string[] str1 = Console.ReadLine().Split(" ");
+            string[] str1 = Console.ReadLine().Split(' ');
             for (int i = 0; i < n; i++)
             {
                 if (Convert.ToInt32(str1[i]) >= 0)
@@ -275,7 +275,7 @@ namespace CosoleTask
 			for (int i = 0; howNumbers > i; i++)
 			{
 				
-				if (Convert.ToDouble(numbers[i]) < 2.5)
+				if (Convert.ToDouble(numbers[i]) <= 2.5)
 				{
 					result = numbers[i];
 					result1 = i;
@@ -438,5 +438,27 @@ namespace CosoleTask
 				Console.WriteLine(result);
 			}
 		}
-	}
+
+        void task116()
+        {
+            //
+        }
+
+        void task1286()
+        {
+            string[] n = Console.ReadLine().Split(' ');
+            int a1 = Convert.ToInt32(n[0]);
+            int a2 = Convert.ToInt32(n[1]);
+            int a3 = Convert.ToInt32(n[2]);
+            Console.WriteLine(a1 + a2 + a3);
+        }
+
+        void task1287()
+        {
+            string[] n = Console.ReadLine().Split(' ');
+            int a1 = Convert.ToInt32(n[0]);
+            int a2 = Convert.ToInt32(n[1]);
+            Console.WriteLine(a1 * a2);
+        }
+    }
 }
