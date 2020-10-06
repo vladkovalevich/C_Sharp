@@ -342,10 +342,10 @@ namespace CosoleTask
 			Console.WriteLine(resultd1);
 		}
 
-		void task8807()
+		void task8807() 
 		{
-			string a2 = Console.ReadLine();
-			Console.WriteLine("-"+a2);
+			int a2 = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine(a2 * -1);
 		}
 
 		void task8808()
