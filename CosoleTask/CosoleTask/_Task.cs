@@ -375,12 +375,12 @@ namespace CosoleTask
 		void task8813()
 		{
 			string[] n = Console.ReadLine().Split(' ');
-			int a = Convert.ToInt32(n[0]);
-			int b = Convert.ToInt32(n[1]);
-			int c = Convert.ToInt32(n[2]);
+			Int64 a = Convert.ToInt64(n[0]);
+            Int64 b = Convert.ToInt64(n[1]);
+            Int64 c = Convert.ToInt64(n[2]);
 
-			int P = 2 * (a * b + b * c + a * c);
-			int S = a * b * c;
+            Int64 P = 2 * (a * b + b * c + a * c);
+            Int64 S = a * b * c;
 			Console.WriteLine(Convert.ToString(P) + " " + Convert.ToString(S));
 		}
 
