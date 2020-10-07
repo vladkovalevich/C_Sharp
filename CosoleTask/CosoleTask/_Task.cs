@@ -216,7 +216,7 @@ namespace CosoleTask
 			var hours = b2 - a1;
 			var hours2 = a2 - b1;
 			var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
-			Console.WriteLine(result.ToString(@"hh\mm"));
+			Console.WriteLine(result.ToString(@"hh\:mm"));
 		}
 
 		void task5()
