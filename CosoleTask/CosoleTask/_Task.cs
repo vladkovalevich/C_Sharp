@@ -445,8 +445,8 @@ namespace CosoleTask
         void task1287()
         {
             string[] n = Console.ReadLine().Split(' ');
-            int a1 = Convert.ToInt32(n[0]);
-            int a2 = Convert.ToInt32(n[1]);
+            Int64 a1 = Convert.ToInt64(n[0]);
+            Int64 a2 = Convert.ToInt64(n[1]);
             Console.WriteLine(a1 * a2);
         }
     }
