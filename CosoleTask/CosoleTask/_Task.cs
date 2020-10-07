@@ -182,6 +182,7 @@ namespace CosoleTask
 			{
 				case 1:
                 case 2:
+                case 12:
 					Console.WriteLine("Winter");
 					break;
 				case 3:
@@ -198,9 +199,6 @@ namespace CosoleTask
 				case 10:
 				case 11:
 					Console.WriteLine("Autumn");
-					break;
-				case 12:
-					Console.WriteLine("Winter");
 					break;
 
 
