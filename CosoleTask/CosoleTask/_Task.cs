@@ -166,11 +166,19 @@ namespace CosoleTask
             {
                 if (Convert.ToInt32(str1[i]) >= 0)
                 {
-                    Console.Write(Convert.ToString(Convert.ToInt32(str1[i]) + 2) + " ");
+                    Console.Write(Convert.ToString(Convert.ToInt32(str1[i]) + 2));
+                    if (i != n - 1)
+                    {
+                        Console.Write(" ");
+                    }
                 }
                 else
                 {
-                    Console.Write(str1[i] + " ");
+                    Console.Write(str1[i]);
+                    if(i != n-1)
+                    {
+                        Console.Write(" ");
+                    }
                 }
             }
         }
