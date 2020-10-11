@@ -224,7 +224,14 @@ namespace CosoleTask
 			var hours = b2 - a1;
 			var hours2 = a2 - b1;
 			var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
-			Console.WriteLine(result.ToString(@"hh\:mm"));
+            if ((hours.TotalSeconds - hours2.TotalSeconds) / 2 > 86400)
+            {
+                Console.WriteLine(result.ToString(@"dd\:hh\:mm"));
+            }
+            else
+            {
+                Console.WriteLine(result.ToString(@"hh\:mm"));
+            }
 		}
 
 		void task5()
@@ -261,34 +268,24 @@ namespace CosoleTask
 		}
 		void task907()
 		{
-			//todo 50%
 			int howNumbers = Convert.ToInt32(Console.ReadLine());
 			string n = Console.ReadLine();
 			string[] numbers = n.Split();
 			string result = " ";
-			int result1 = 0;
+			bool is_Found = false;
 			for (int i = 0; howNumbers > i; i++)
 			{
 				
 				if (Convert.ToDouble(numbers[i]) <= 2.5)
 				{
 					result = numbers[i];
-					result1 = i;
-					Console.WriteLine(Convert.ToString(i) + " " + result);
-					break;
-				}
-				if (n == "1.0 5 8.2 10.5 17.3") 
-				{
-					Console.WriteLine("Not Found");
-					break;
-				}
-				if (n == "5.0 2.7 2.6 2.5 2.4")
-				{
-					Console.WriteLine("Not Found");
+                    is_Found = true;
+                    string result2 = String.Format("{0:f2}", result);
+					Console.WriteLine(Convert.ToString(i) + " " + result2);
 					break;
 				}
 			}
-			if (result1 == 0)
+            if (is_Found)
 			{
 				Console.WriteLine("Not Found");
 			}
