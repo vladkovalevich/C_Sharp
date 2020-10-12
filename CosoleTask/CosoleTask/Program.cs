@@ -7,7 +7,7 @@ namespace CosoleTask
 		static void Main(string[] args)
 		{
 			_Task task = new _Task();
-			task.run(904);
+			task.run(583);
             Console.ReadLine();
 		}
 	}
