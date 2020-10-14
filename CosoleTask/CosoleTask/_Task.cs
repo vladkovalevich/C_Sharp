@@ -121,42 +121,43 @@ namespace CosoleTask
 			Console.ReadLine();
 		}
 
-		void task902() 
-		{
-			int n = Convert.ToInt32(Console.ReadLine());
-			if (n > 0)
-			{
-				if (n < 3)
-				{
-					Console.WriteLine("Initial");
-				}
-			}
-			
-			if (n > 4) 
-			{
-				if (n < 6) 
-				{
-					Console.WriteLine("Average");
-				}
-			}
+        void task902()
+        {
+            //43%
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n >= 1)
+            {
+                if (n <= 3)
+                {
+                    Console.WriteLine("Initial");
+                }
+            }
 
-			if (n > 7)
-			{
-				if (n < 9)
-				{
-					Console.WriteLine("Sufficient");
-				}
-			}
+            if (n >= 4)
+            {
+                if (n <= 6)
+                {
+                    Console.WriteLine("Average");
+                }
+            }
 
-			if (n > 10)
-			{
-				if (n < 12)
-				{
-					Console.WriteLine("High");
-				}
-			}
+            if (n >= 7)
+            {
+                if (n <= 9)
+                {
+                    Console.WriteLine("Sufficient");
+                }
+            }
 
-		}
+            if (n >= 10)
+            {
+                if (n <= 12)
+                {
+                    Console.WriteLine("High");
+                }
+            }
+
+        }
 
 		void task904() 
 		{
@@ -261,27 +262,19 @@ namespace CosoleTask
 		}
 		void task907()
 		{
-			int howNumbers = Convert.ToInt32(Console.ReadLine());
+            Console.ReadLine();
 			string n = Console.ReadLine();
 			string[] numbers = n.Split();
-			string result = " ";
-			bool is_Found = false;
-			for (int i = 0; howNumbers > i; i++)
+            for (int i = 0; numbers.Length > i; i++)
 			{
-				
-				if (Convert.ToDouble(numbers[i]) <= 2.5)
+                double value = Convert.ToDouble(numbers[i]);
+                if (value <= 2.5)
 				{
-					result = numbers[i];
-                    is_Found = true;
-                    string result2 = String.Format("{0:f2}", result);
-					Console.WriteLine(Convert.ToString(i) + " " + result2);
-					break;
+                    Console.WriteLine("{0} {1:f2}", i + 1, value);
+                    return;
 				}
 			}
-            if (is_Found)
-			{
-				Console.WriteLine("Not Found");
-			}
+            Console.WriteLine("Not Found");
 		}
 		void task8800()
 		{
