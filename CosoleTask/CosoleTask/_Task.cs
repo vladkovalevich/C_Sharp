@@ -105,6 +105,33 @@ namespace CosoleTask
 
 		/*----Задачи----*/
 
+        void Task1() 
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == "end")
+                {
+                    foreach (KeyValuePair<string, int> pair in dict)
+                    {
+                        string key = pair.Key;
+                        int value = pair.Value;
+                    }
+                    Console.ReadLine();
+                    return;
+                }
+                else
+                {
+                    string[] str = input.Split();
+                    string color = str[0];
+                    int count = Convert.ToInt32(str[1]);
+                    dict.Add(color, count);
+                }
+            }
+        }
+
 
 
 		void task1()
@@ -123,38 +150,22 @@ namespace CosoleTask
 
         void task902()
         {
-            //43%
             int n = Convert.ToInt32(Console.ReadLine());
-            if (n >= 1)
+            if (n >= 1 || n <= 3)
             {
-                if (n <= 3)
-                {
                     Console.WriteLine("Initial");
-                }
             }
-
-            if (n >= 4)
+            else if (n >= 4 || n <= 6)
             {
-                if (n <= 6)
-                {
                     Console.WriteLine("Average");
-                }
             }
-
-            if (n >= 7)
+            else if (n >= 7 || n <= 9)
             {
-                if (n <= 9)
-                {
                     Console.WriteLine("Sufficient");
-                }
             }
-
-            if (n >= 10)
+            else
             {
-                if (n <= 12)
-                {
                     Console.WriteLine("High");
-                }
             }
 
         }
