@@ -6,7 +6,43 @@ namespace CosoleTask
 {
     class _Task
     {
-        public void run(int id)
+		public delegate string [] OlympTask(string [] input);
+		void test(OlympTask task, string[] input, string[] expectedOutput)
+		{
+			var realOutput = task(input);
+			if (realOutput.Length == expectedOutput.Length)
+            {
+				for(int i = 0; i < realOutput.Length; i++)
+                {
+					if (realOutput[i] != expectedOutput[i])
+                    {
+						Console.WriteLine("FAIL (expected: {0}, actual {1}", expectedOutput[i], realOutput[i]);
+						return;
+					}
+				}
+				Console.WriteLine("PASS");
+				//
+            }
+            else
+            {
+				Console.WriteLine("FAIL invalid length");
+            }
+		}
+
+		void execute(OlympTask task, int inputLines)
+        {
+			string[] inputArray = new string[inputLines];
+			for(int i = 0; i < inputLines; i++)
+            {
+				inputArray[i] = Console.ReadLine();
+			}
+
+			string[] output = task(inputArray);
+			foreach (string line in output)
+				Console.WriteLine(line);
+		}
+
+		public void run(int id)
         {
             switch (id) 
             {
@@ -148,33 +184,14 @@ namespace CosoleTask
 			Console.ReadLine();
 		}
 
-        опять со связью проблемы
-
         void task902()
         {
-            string[] output = _task902(new string[] { "12" });
-            if (output[0] != "High")
-            {
-                Console.WriteLine("Test case 1 fails! Expected {0}, Actual {1}", "High", output[0]);
-            }
-            output = _task902(new string[] { "6" });
-            if (output[0] != "Average")
-            {
-                Console.WriteLine("Test case 2 fails!");
-            }
-            output = _task902(new string[] { "3" });
-            if (output[0] != "Initial")
-            {
-                Console.WriteLine("Test case 2 fails!");
-            }
-            output = _task902(new string[] { "8" });
-            if (output[0] != "Sufficient")
-            {
-                Console.WriteLine("Test case 4 fails!");
-            }
+			test(_task902, new string[] { "12" }, new string[] { "High" });
+			test(_task902, new string[] { "6" }, new string[] { "Average" }); 
+			test(_task902, new string[] { "3" }, new string[] { "Initial" });
+			test(_task902, new string[] { "8" }, new string[] { "Sufficient" });
 
-            output = _task902(new string[] { Console.ReadLine() });
-            Console.WriteLine(output[0]);
+			execute(_task902, 1);
         }
 
         string[] _task902(string[] input)
@@ -189,7 +206,7 @@ namespace CosoleTask
             {
                 res[0] = "Average";
             }
-            else if (n >= 7)
+            else if (n >= 7 && n <= 9)
             {
                 res[0] = "Sufficient";
             }
@@ -199,11 +216,7 @@ namespace CosoleTask
             }
             return res;
         }
-/*
-        void task902()
-        {
-        }
-*/
+
 		void task904() 
 		{
             int n = Convert.ToInt32(Console.ReadLine());
@@ -305,22 +318,31 @@ namespace CosoleTask
 			}
 			Console.WriteLine(result);
 		}
+
 		void task907()
 		{
-            Console.ReadLine();
-			string n = Console.ReadLine();
-			string[] numbers = n.Split();
-            for (int i = 0; numbers.Length > i; i++)
+			test(_task907, new string[] { "5", "6 7.5 2.1 2.0 0" }, new[] { "3 2.10" });
+			test(_task907, new string[] { "5", "6 7.5 5.1 7.0 80" }, new[] { "Not Found" });
+			test(_task907, new string[] { "5", "6 7.5 2.6 2.5 2.4" }, new[] { "4 2.50" });
+
+			execute(_task907, 2);
+		}
+
+		string [] _task907(string [] input)
+        {
+			string[] numbers = input[1].Split();
+			for (int i = 0; numbers.Length > i; i++)
 			{
-                double value = Convert.ToDouble(numbers[i]);
-                if (value <= 2.5)
+				double value = Convert.ToDouble(numbers[i]);
+				if (value <= 2.5)
 				{
-                    Console.WriteLine("{0} {1:f2}", i + 1, value);
-                    return;
+					string result = String.Format("{0} {1:f2}", i + 1, value);
+					return new[] { result };
 				}
 			}
-            Console.WriteLine("Not Found");
-		}
+			return new[] { "Not Found" };
+        }
+
 		void task8800()
 		{
 			Console.WriteLine("Hello, Python!");
