@@ -148,28 +148,62 @@ namespace CosoleTask
 			Console.ReadLine();
 		}
 
+        опять со связью проблемы
+
         void task902()
         {
-            int n = Convert.ToInt32(Console.ReadLine());
-            if (n >= 1 || n <= 3)
+            string[] output = _task902(new string[] { "12" });
+            if (output[0] != "High")
             {
-                    Console.WriteLine("Initial");
+                Console.WriteLine("Test case 1 fails! Expected {0}, Actual {1}", "High", output[0]);
             }
-            else if (n >= 4 || n <= 6)
+            output = _task902(new string[] { "6" });
+            if (output[0] != "Average")
             {
-                    Console.WriteLine("Average");
+                Console.WriteLine("Test case 2 fails!");
             }
-            else if (n >= 7 || n <= 9)
+            output = _task902(new string[] { "3" });
+            if (output[0] != "Initial")
             {
-                    Console.WriteLine("Sufficient");
+                Console.WriteLine("Test case 2 fails!");
+            }
+            output = _task902(new string[] { "8" });
+            if (output[0] != "Sufficient")
+            {
+                Console.WriteLine("Test case 4 fails!");
+            }
+
+            output = _task902(new string[] { Console.ReadLine() });
+            Console.WriteLine(output[0]);
+        }
+
+        string[] _task902(string[] input)
+        {
+            string [] res = new string[1];
+            int n = Convert.ToInt32(input[0]);
+            if (n >= 1 && n <= 3)
+            {
+                res[0] = "Initial";
+            }
+            else if (n >= 4 && n <= 6)
+            {
+                res[0] = "Average";
+            }
+            else if (n >= 7)
+            {
+                res[0] = "Sufficient";
             }
             else
             {
-                    Console.WriteLine("High");
+                res[0] = "High";
             }
-
+            return res;
         }
-
+/*
+        void task902()
+        {
+        }
+*/
 		void task904() 
 		{
             int n = Convert.ToInt32(Console.ReadLine());
