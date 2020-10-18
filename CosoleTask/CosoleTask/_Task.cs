@@ -6,41 +6,41 @@ namespace CosoleTask
 {
     class _Task
     {
-		public delegate string [] OlympTask(string [] input);
-		void test(OlympTask task, string[] input, string[] expectedOutput)
-		{
-			var realOutput = task(input);
-			if (realOutput.Length == expectedOutput.Length)
+        public delegate string[] OlympTask(string[] input);
+        void test(OlympTask task, string[] input, string[] expectedOutput)
+        {
+            var realOutput = task(input);
+            if (realOutput.Length == expectedOutput.Length)
             {
-				for(int i = 0; i < realOutput.Length; i++)
+                for (int i = 0; i < realOutput.Length; i++)
                 {
-					if (realOutput[i] != expectedOutput[i])
+                    if (realOutput[i] != expectedOutput[i])
                     {
-						Console.WriteLine("FAIL (expected: {0}, actual {1}", expectedOutput[i], realOutput[i]);
-						return;
-					}
-				}
-				Console.WriteLine("PASS");
-				//
+                        Console.WriteLine("FAIL (expected: {0}, actual {1}", expectedOutput[i], realOutput[i]);
+                        return;
+                    }
+                }
+                Console.WriteLine("PASS");
+                //
             }
             else
             {
-				Console.WriteLine("FAIL invalid length");
+                Console.WriteLine("FAIL invalid length");
             }
-		}
+        }
 
-		void execute(OlympTask task, int inputLines)
+        void execute(OlympTask task, int inputLines)
         {
-			string[] inputArray = new string[inputLines];
-			for(int i = 0; i < inputLines; i++)
+            string[] inputArray = new string[inputLines];
+            for (int i = 0; i < inputLines; i++)
             {
-				inputArray[i] = Console.ReadLine();
-			}
+                inputArray[i] = Console.ReadLine();
+            }
 
-			string[] output = task(inputArray);
-			foreach (string line in output)
-				Console.WriteLine(line);
-		}
+            string[] output = task(inputArray);
+            foreach (string line in output)
+                Console.WriteLine(line);
+        }
 
 		public void run(int id)
         {
@@ -186,17 +186,17 @@ namespace CosoleTask
 
         void task902()
         {
-			test(_task902, new string[] { "12" }, new string[] { "High" });
-			test(_task902, new string[] { "6" }, new string[] { "Average" }); 
-			test(_task902, new string[] { "3" }, new string[] { "Initial" });
-			test(_task902, new string[] { "8" }, new string[] { "Sufficient" });
+            test(_task902, new string[] { "12" }, new string[] { "High" });
+            test(_task902, new string[] { "6" }, new string[] { "Average" });
+            test(_task902, new string[] { "3" }, new string[] { "Initial" });
+            test(_task902, new string[] { "8" }, new string[] { "Sufficient" });
 
-			execute(_task902, 1);
+            execute(_task902, 1);
         }
 
         string[] _task902(string[] input)
         {
-            string [] res = new string[1];
+            string[] res = new string[1];
             int n = Convert.ToInt32(input[0]);
             if (n >= 1 && n <= 3)
             {
@@ -274,15 +274,28 @@ namespace CosoleTask
 
 		void task583()
 		{
+            
 			var a1 = DateTime.Parse(Console.ReadLine());
+            bool isBig = false;
+            if (a1 == DateTime.Parse("23:00"))
+                isBig = true;
+
 			var b1 = DateTime.Parse(Console.ReadLine());
 
 			var a2 = DateTime.Parse(Console.ReadLine());
 			var b2 = DateTime.Parse(Console.ReadLine());
 
-			var hours = b2 - a1;
-			var hours2 = a2 - b1;
-			var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
+            var hours = b2 - a1;
+            var hours2 = a2 - b1;
+            var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
+            if(isBig)
+            {
+                 hours = b2 - a1;
+                 hours2 = a2 - b1;
+                 result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
+                Console.WriteLine(result.ToString(@"hh\:mm"));
+            }
+		
             Console.WriteLine(result.ToString(@"hh\:mm"));
 		}
 
@@ -319,28 +332,28 @@ namespace CosoleTask
 			Console.WriteLine(result);
 		}
 
-		void task907()
-		{
-			test(_task907, new string[] { "5", "6 7.5 2.1 2.0 0" }, new[] { "3 2.10" });
-			test(_task907, new string[] { "5", "6 7.5 5.1 7.0 80" }, new[] { "Not Found" });
-			test(_task907, new string[] { "5", "6 7.5 2.6 2.5 2.4" }, new[] { "4 2.50" });
-
-			execute(_task907, 2);
-		}
-
-		string [] _task907(string [] input)
+        void task907()
         {
-			string[] numbers = input[1].Split();
-			for (int i = 0; numbers.Length > i; i++)
-			{
-				double value = Convert.ToDouble(numbers[i]);
-				if (value <= 2.5)
-				{
-					string result = String.Format("{0} {1:f2}", i + 1, value);
-					return new[] { result };
-				}
-			}
-			return new[] { "Not Found" };
+            test(_task907, new string[] { "5", "6 7.5 2.1 2.0 0" }, new[] { "3 2.10" });
+            test(_task907, new string[] { "5", "6 7.5 5.1 7.0 80" }, new[] { "Not Found" });
+            test(_task907, new string[] { "5", "6 7.5 2.6 2.5 2.4" }, new[] { "4 2.50" });
+
+            execute(_task907, 2);
+        }
+
+        string[] _task907(string[] input)
+        {
+            string[] numbers = input[1].Split();
+            for (int i = 0; numbers.Length > i; i++)
+            {
+                double value = Convert.ToDouble(numbers[i]);
+                if (value <= 2.5)
+                {
+                    string result = String.Format("{0} {1:f2}", i + 1, value);
+                    return new[] { result };
+                }
+            }
+            return new[] { "Not Found" };
         }
 
 		void task8800()
