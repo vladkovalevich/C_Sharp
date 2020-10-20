@@ -198,21 +198,24 @@ namespace CosoleTask
         {
             string[] res = new string[1];
             int n = Convert.ToInt32(input[0]);
-            if (n >= 1 && n <= 3)
+            if (n <= 3)
             {
                 res[0] = "Initial";
             }
-            else if (n >= 4 && n <= 6)
+            else if (n >= 4)
             {
-                res[0] = "Average";
-            }
-            else if (n >= 7 && n <= 9)
-            {
-                res[0] = "Sufficient";
-            }
-            else
-            {
-                res[0] = "High";
+                if(n <= 6)
+                {
+                    res[0] = "Average";
+                }
+                else if (n >= 7 && n <= 9)
+                {
+                    res[0] = "Sufficient";
+                }
+                else
+                {
+                    res[0] = "High";
+                }
             }
             return res;
         }
@@ -272,6 +275,35 @@ namespace CosoleTask
 			}
 		}
 
+        void task583() 
+        {
+            test(_task583, new string[] { "08:00", "10:00", "12:00", "18:00" }, new string[] { "04:00" });
+            test(_task583, new string[] { "23:00", "01:00", "05:00", "11:00"}, new string[] { "04:00" });
+            test(_task583, new string[] { "21:00", "23:00", "03:00", "09:00"}, new string[] { "04:00" });
+            test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
+        }
+        string[] _task583(string[] input)
+        {
+            //если a1 больше b2 то плюс 1 день к a1 
+            
+            var a1 = DateTime.Parse(input[0]);
+            var b1 = DateTime.Parse(input[1]);
+
+            var a2 = DateTime.Parse(input[2]);
+            var b2 = DateTime.Parse(input[3]);
+            if (a1 > b1)
+            {
+                b1 = b1 + TimeSpan.FromDays(1);
+                a2 = a2 + TimeSpan.FromDays(1);
+                b2 = b2 + TimeSpan.FromDays(1);
+            }
+            var hours = b2 - a1;
+            var hours2 = a2 - b1;
+            var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
+
+            return new[] {result.ToString(@"hh\:mm")};
+        }
+        /*
 		void task583()
 		{
             
@@ -295,9 +327,8 @@ namespace CosoleTask
                  result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
                 Console.WriteLine(result.ToString(@"hh\:mm"));
             }
-		
             Console.WriteLine(result.ToString(@"hh\:mm"));
-		}
+		}*/
 
 		void task5()
 		{
@@ -330,7 +361,7 @@ namespace CosoleTask
 				result += 1;
 			}
 			Console.WriteLine(result);
-		}
+        }
 
         void task907()
         {
