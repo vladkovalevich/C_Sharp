@@ -202,20 +202,17 @@ namespace CosoleTask
             {
                 res[0] = "Initial";
             }
-            else if (n >= 4)
+            else if (n <= 6)
             {
-                if(n <= 6)
-                {
-                    res[0] = "Average";
-                }
-                else if (n >= 7 && n <= 9)
-                {
-                    res[0] = "Sufficient";
-                }
-                else
-                {
-                    res[0] = "High";
-                }
+                res[0] = "Average";
+            }
+            else if (n <= 9)
+            {
+                res[0] = "Sufficient";
+            }
+            else
+            {
+                res[0] = "High";
             }
             return res;
         }
