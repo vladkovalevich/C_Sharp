@@ -267,8 +267,6 @@ namespace CosoleTask
 				case 11:
 					Console.WriteLine("Autumn");
 					break;
-
-
 			}
 		}
 
@@ -332,6 +330,33 @@ namespace CosoleTask
 			int n = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine(n * n);
 		}
+
+        void task7338()
+        {
+            test(_task907, new string[] { "2" }, new[] { "10" });
+            test(_task907, new string[] { "9" }, new[] { "18" });
+            execute(_task7338 , 1);
+        }
+
+        string[] _task7338(string[] input)
+        {
+            int number = Convert.ToInt32(input);
+            for (int i = 10; i < 99; i++)
+            {
+                string[] num_s = Convert.ToString(i).Split();
+                int a = Convert.ToInt32(num_s[0]);
+                int b = Convert.ToInt32(num_s[1]);
+                if (number == a+b)
+                {
+                    int c  = Convert.ToInt32(num_s[0]+num_s[1]) * 2;
+                    string[] k = Convert.ToString(c).Split();
+                    if (number == Convert.ToInt32(k[0]+k[1])) 
+                    {
+                        return Convert.ToString(a + b);
+                    }
+                }
+            }
+        }
 
 		void task7366()
 		{
