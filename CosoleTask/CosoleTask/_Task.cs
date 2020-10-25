@@ -276,11 +276,13 @@ namespace CosoleTask
             test(_task583, new string[] { "23:00", "01:00", "05:00", "11:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "21:00", "23:00", "03:00", "09:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
-        }
-        string[] _task583(string[] input)
+			test(_task583, new string[] { "10:00", "9:00", "01:00", "04:00" }, new string[] { "01:00" });
+			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
+			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
+
+		}
+		string[] _task583(string[] input)
         {
-            //если a1 больше b2 то плюс 1 день к a1 
-            
             var a1 = DateTime.Parse(input[0]);
             var b1 = DateTime.Parse(input[1]);
 
@@ -298,32 +300,7 @@ namespace CosoleTask
 
             return new[] {result.ToString(@"hh\:mm")};
         }
-        /*
-		void task583()
-		{
-            
-			var a1 = DateTime.Parse(Console.ReadLine());
-            bool isBig = false;
-            if (a1 == DateTime.Parse("23:00"))
-                isBig = true;
 
-			var b1 = DateTime.Parse(Console.ReadLine());
-
-			var a2 = DateTime.Parse(Console.ReadLine());
-			var b2 = DateTime.Parse(Console.ReadLine());
-
-            var hours = b2 - a1;
-            var hours2 = a2 - b1;
-            var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
-            if(isBig)
-            {
-                 hours = b2 - a1;
-                 hours2 = a2 - b1;
-                 result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
-                Console.WriteLine(result.ToString(@"hh\:mm"));
-            }
-            Console.WriteLine(result.ToString(@"hh\:mm"));
-		}*/
 
 		void task5()
 		{
@@ -352,10 +329,11 @@ namespace CosoleTask
                     string[] k = Convert.ToString(c).Split();
                     if (number == Convert.ToInt32(k[0]+k[1])) 
                     {
-                        return Convert.ToString(a + b);
+                        return new[] { Convert.ToString(a + b) };
                     }
                 }
             }
+			return new[] { "todo" };
         }
 
 		void task7366()
