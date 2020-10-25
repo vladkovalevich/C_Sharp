@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CosoleTask
@@ -133,6 +134,9 @@ namespace CosoleTask
 				case 500:
 					task500();
 					break;
+				case -1:
+					task_1();
+					break;
 				default:
 					Console.WriteLine("no such task");
 					break;
@@ -140,30 +144,40 @@ namespace CosoleTask
         }
 
 		/*----Задачи----*/
-
-        void Task1() 
+	    void task_1() 
+		{
+			test(_task_1, new string[] { "Red 5", "Blue 5", "White 3", "end"}, new string[] { "Red 5", "Blue 5", "White 3"});
+			test(_task_1, new string[] { "Red 5", "Blue 5", "Red 4", "White 3", "end" }, new string[] { "Red 9", "Blue 5", "White 3" });
+		}
+		string[] _task_1(string[] input) 
         {
             Dictionary<string, int> dict = new Dictionary<string, int>();
-
+			int index = 0;
             while (true)
             {
-                string input = Console.ReadLine();
-                if (input == "end")
+				string line = input[index];
+                if (line == "end")
                 {
-                    foreach (KeyValuePair<string, int> pair in dict)
+				    string[] array;
+					array = new string[dict.Count]; 
+					for (int i = 0; i < dict.Count; i++)
                     {
-                        string key = pair.Key;
+						KeyValuePair<string, int> pair = dict.ElementAt(i);
+
+						string key = pair.Key;
                         int value = pair.Value;
-                    }
-                    Console.ReadLine();
-                    return;
+						array[i] = key + " " + value;
+
+					}
+                    return array;
                 }
                 else
                 {
-                    string[] str = input.Split();
+                    string[] str = line.Split();
                     string color = str[0];
                     int count = Convert.ToInt32(str[1]);
                     dict.Add(color, count);
+					index++;
                 }
             }
         }
