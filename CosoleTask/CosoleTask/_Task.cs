@@ -71,6 +71,9 @@ namespace CosoleTask
 				case 7366:
 					task7366();
 					break;
+                case 7338:
+                    task7338();
+                    break;
 				case 19:
 					task19();
 					break;
@@ -290,7 +293,7 @@ namespace CosoleTask
             test(_task583, new string[] { "23:00", "01:00", "05:00", "11:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "21:00", "23:00", "03:00", "09:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
-			test(_task583, new string[] { "10:00", "9:00", "01:00", "04:00" }, new string[] { "01:00" });
+			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
 			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
 			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
 
@@ -302,10 +305,15 @@ namespace CosoleTask
 
             var a2 = DateTime.Parse(input[2]);
             var b2 = DateTime.Parse(input[3]);
+            
             if (a1 > b1)
             {
                 b1 = b1 + TimeSpan.FromDays(1);
                 a2 = a2 + TimeSpan.FromDays(1);
+                b2 = b2 + TimeSpan.FromDays(1);
+            }
+            if (a2 > b2)
+            {
                 b2 = b2 + TimeSpan.FromDays(1);
             }
             var hours = b2 - a1;
@@ -322,32 +330,47 @@ namespace CosoleTask
 			Console.WriteLine(n * n);
 		}
 
+        void task8()
+        {
+            test(_task8, new string[] { "4" }, new[] { "12" });
+
+            execute(_task8, 1);
+        }
+
+        string[] _task8(string[] input)
+        {
+            int n = Convert.ToInt32(input[0]);
+            double result = 2 * Math.Floor(Math.Sqrt(n)) + Math.Ceiling(n / Math.Floor(Math.Sqrt(n)));
+            return new[] { Convert.ToString(result) };
+        }
+
         void task7338()
         {
-            test(_task907, new string[] { "2" }, new[] { "10" });
-            test(_task907, new string[] { "9" }, new[] { "18" });
+            test(_task7338, new string[] { "2" }, new[] { "10" });
             execute(_task7338 , 1);
         }
 
         string[] _task7338(string[] input)
         {
-            int number = Convert.ToInt32(input);
+            int number = Convert.ToInt32(input[0]);
+            int n = 0;
             for (int i = 10; i < 99; i++)
             {
                 string[] num_s = Convert.ToString(i).Split();
                 int a = Convert.ToInt32(num_s[0]);
                 int b = Convert.ToInt32(num_s[1]);
+                
                 if (number == a+b)
                 {
                     int c  = Convert.ToInt32(num_s[0]+num_s[1]) * 2;
                     string[] k = Convert.ToString(c).Split();
                     if (number == Convert.ToInt32(k[0]+k[1])) 
                     {
-                        return new[] { Convert.ToString(a + b) };
+                        n += 1;
                     }
                 }
             }
-			return new[] { "todo" };
+            return new[] { Convert.ToString(n) };
         }
 
 		void task7366()
