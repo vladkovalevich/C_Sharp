@@ -179,7 +179,8 @@ namespace CosoleTask
                     string[] str = line.Split();
                     string color = str[0];
                     int count = Convert.ToInt32(str[1]);
-                    dict.Add(color, count);
+                    dict.Add(color, (int)count);
+                    dict.Add(color, (int)count);
 					index++;
                 }
             }
@@ -349,28 +350,27 @@ namespace CosoleTask
             test(_task7338, new string[] { "2" }, new[] { "10" });
             execute(_task7338 , 1);
         }
-
         string[] _task7338(string[] input)
         {
             int number = Convert.ToInt32(input[0]);
             int n = 0;
             for (int i = 10; i < 99; i++)
             {
-                string[] num_s = Convert.ToString(i).Split();
-                int a = Convert.ToInt32(num_s[0]);
-                int b = Convert.ToInt32(num_s[1]);
-                
-                if (number == a+b)
+                if (calcSum(i) == calcSum(i * number))
                 {
-                    int c  = Convert.ToInt32(num_s[0]+num_s[1]) * 2;
-                    string[] k = Convert.ToString(c).Split();
-                    if (number == Convert.ToInt32(k[0]+k[1])) 
-                    {
-                        n += 1;
-                    }
+                    n += 1;
                 }
             }
             return new[] { Convert.ToString(n) };
+        }
+
+        int calcSum(int input)
+        {
+            //todo
+            int a = input / 10;
+            int b = input % 10;
+            int c = a + b;
+            return c;
         }
 
 		void task7366()
@@ -565,16 +565,17 @@ namespace CosoleTask
 			}
 		}
 
-        /*void 7338()
-        {
-            
-        }*/
-
         void task116()
         {
-            //
+           // //test(_task116, new string[] { "11", "3++++" }, new[] { "13" });
+            //execute(_task116, 2);
         }
 
+       /* string[] _task116(string[] input)
+        {
+            string[] numbers = input;
+        }
+        */
         void task1286()
         {
             string[] n = Console.ReadLine().Split(' ');

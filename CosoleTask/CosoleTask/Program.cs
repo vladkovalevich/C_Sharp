@@ -7,7 +7,7 @@ namespace CosoleTask
 		static void Main(string[] args)
 		{
 			_Task task = new _Task();
-			task.run(7338);
+			task.run(-1);
             Console.ReadLine();
 		}
 	}
@@ -23,7 +23,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-			execute(_task907, 2);
+			execute(_task7338, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -38,19 +38,24 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-		static string [] _task907(string [] input)
+		string[] _task7338(string[] input)
         {
-			string[] numbers = input[1].Split();
-			for (int i = 0; numbers.Length > i; i++)
-			{
-				double value = Convert.ToDouble(numbers[i]);
-				if (value <= 2.5)
-				{
-					string result = String.Format("{0} {1:f2}", i + 1, value);
-					return new[] { result };
-				}
-			}
-			return new[] { "Not Found" };
+            int number = Convert.ToInt32(input[0]);
+            int n = 0;
+            for (int i = 10; i < 99; i++)
+            {
+                int a = i / 10;
+                int b = i % 10;
+                int c = a + b;
+                int ac_int = i * 2;
+                int ab_int =  ac_int / 10;
+                int abc_int = ac_int % 10;
+                if (c == ab_int + abc_int)
+                {
+                    n += 1;
+                }
+            }
+            return new[] { Convert.ToString(n) };
         }
     }
 }
