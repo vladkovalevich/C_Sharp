@@ -307,9 +307,14 @@ namespace CosoleTask
             var a2 = DateTime.Parse(input[2]);
             var b2 = DateTime.Parse(input[3]);
             
+            if(a2 >= b2)
+            {
+                b2 = b2 += TimeSpan.FromDays(1);
+            }
 
             var hours = b2 - a1;
             var hours2 = a2 - b1;
+            //if(hours2 >= )
             var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
 
             return new[] {result.ToString(@"hh\:mm")};
@@ -360,7 +365,7 @@ namespace CosoleTask
             //todo
             int a = input / 10;
             int b = input % 10;
-            int c = a + b;
+            int c = a + b;   
             return c;
         }
 
