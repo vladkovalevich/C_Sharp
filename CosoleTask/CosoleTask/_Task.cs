@@ -157,7 +157,7 @@ namespace CosoleTask
             Dictionary<string, int> dict = new Dictionary<string, int>();
 			int index = 0;
             while (true)
-            {
+            { 
 				string line = input[index];
                 if (line == "end")
                 {
@@ -179,8 +179,10 @@ namespace CosoleTask
                     string[] str = line.Split();
                     string color = str[0];
                     int count = Convert.ToInt32(str[1]);
-                    dict.Add(color, (int)count);
-                    dict.Add(color, (int)count);
+                    if(dict.ContainsKey(color))
+                    {
+                        dict.Remove(color);
+                    }
 					index++;
                 }
             }
@@ -306,27 +308,28 @@ namespace CosoleTask
 
             var a2 = DateTime.Parse(input[2]);
             var b2 = DateTime.Parse(input[3]);
-            
-            if(a2 >= b2)
-            {
-                b2 = b2 += TimeSpan.FromDays(1);
-            }
 
-            var hours = b2 - a1;
-            var hours2 = a2 - b1;
-            //if(hours2 >= )
-            var result = TimeSpan.FromSeconds((hours.TotalSeconds - hours2.TotalSeconds) / 2);
+            var Odessa = b2 - a1;
+            var Berlin_paking = a2 - b1;
+           /* if(Odessa < Berlin_paking)
+            {
+                Odessa += TimeSpan.FromDays(1);
+            }*/
+            //if(Odessa == )
+            //{
+                //Odessa += TimeSpan.FromDays(1);
+            //}
+            var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
 
             return new[] {result.ToString(@"hh\:mm")};
         }
-
 
 		void task5()
 		{
 			int n = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine(n * n);
 		}
-
+        
         void task8()
         {
             test(_task8, new string[] { "4" }, new[] { "12" });
