@@ -349,21 +349,22 @@ namespace CosoleTask
             int n = 0;
             for (int i = 10; i < 99; i++)
             {
-                if (calcSum(i) == calcSum(i * number))
+                if (calcSum(Convert.ToString(i)) == calcSum(Convert.ToString(i * number)))
                 {
                     n += 1;
                 }
             }
-            return new[] { Convert.ToString(n) };
+            return new[] { Convert.ToString(n+1) };
         }
 
-        int calcSum(int input)
+        int calcSum(string input)
         {
-            //todo
-            int a = input / 10;
-            int b = input % 10;
-            int c = a + b;   
-            return c;
+           int c = 0; 
+           for(int i =0; i < input.Length; i++)
+           {
+               c = Convert.ToString(input)[i];
+           }
+           return c;
         }
 
 		void task7366()
