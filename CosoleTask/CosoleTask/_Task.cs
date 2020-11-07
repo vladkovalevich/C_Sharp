@@ -22,7 +22,6 @@ namespace CosoleTask
                     }
                 }
                 Console.WriteLine("PASS");
-                //
             }
             else
             {
@@ -80,6 +79,9 @@ namespace CosoleTask
 				case 907:
 					task907();
 					break;
+                case 116:
+                    task116();
+                    break;
 				case 8800:
 					task8800();
 					break;
@@ -311,14 +313,6 @@ namespace CosoleTask
 
             var Odessa = b2 - a1;
             var Berlin_paking = a2 - b1;
-           /* if(Odessa < Berlin_paking)
-            {
-                Odessa += TimeSpan.FromDays(1);
-            }*/
-            //if(Odessa == )
-            //{
-                //Odessa += TimeSpan.FromDays(1);
-            //}
             var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
 
             return new[] {result.ToString(@"hh\:mm")};
@@ -566,15 +560,31 @@ namespace CosoleTask
 
         void task116()
         {
-           // //test(_task116, new string[] { "11", "3++++" }, new[] { "13" });
-            //execute(_task116, 2);
+           test(_task116, new string[] { "11", "3" }, new[] { "13" });
+           execute(_task116, 2);
         }
 
-       /* string[] _task116(string[] input)
+        string[] _task116(string[] input)
         {
             string[] numbers = input;
+            int a = Convert.ToInt32(numbers[0]);
+            int c = Convert.ToInt32(numbers[1]);
+
+            for (int i = 0; i < c; i++)
+            {
+                int f = Convert.ToInt32(Convert.ToString(a)+Convert.ToString(a));
+                if (f % c == 0) 
+                {
+                    return new[] { Convert.ToString(c) };
+                }
+                else
+                {
+                    a++;
+                }
+            }
+            return new[] { "Not Found" };
         }
-        */
+
         void task1286()
         {
             string[] n = Console.ReadLine().Split(' ');
