@@ -38,24 +38,31 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-		string[] _task7338(string[] input)
+		static string[] _task583(string[] input)
         {
-            int number = Convert.ToInt32(input[0]);
-            int n = 0;
-            for (int i = 10; i < 99; i++)
+            var a1 = DateTime.Parse(input[0]);
+            var b1 = DateTime.Parse(input[1]);
+
+            var a2 = DateTime.Parse(input[2]);
+            var b2 = DateTime.Parse(input[3]);
+
+            var Odessa = b2 - a1;
+            var Berlin_paking = a2 - b1;
+            if(Odessa < TimeSpan.Zero)
             {
-                int a = i / 10;
-                int b = i % 10;
-                int c = a + b;
-                int ac_int = i * 2;
-                int ab_int =  ac_int / 10;
-                int abc_int = ac_int % 10;
-                if (c == ab_int + abc_int)
-                {
-                    n += 1;
-                }
+                Odessa += TimeSpan.FromDays(1);
             }
-            return new[] { Convert.ToString(n) };
+            if (Berlin_paking < TimeSpan.Zero)
+            {
+                Berlin_paking += TimeSpan.FromDays(1);
+            }
+            if (Odessa < Berlin_paking)
+            {
+                Odessa += TimeSpan.FromDays(1);
+            }
+         
+            var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
+            return new[] {result};
         }
     }
 }

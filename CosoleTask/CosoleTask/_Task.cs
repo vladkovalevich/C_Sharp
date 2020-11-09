@@ -183,7 +183,11 @@ namespace CosoleTask
                     int count = Convert.ToInt32(str[1]);
                     if(dict.ContainsKey(color))
                     {
-                        dict.Remove(color);
+                      //  dict.
+                    }
+                    else
+                    {
+                        dict.Add(color, count);
                     }
 					index++;
                 }
@@ -321,11 +325,13 @@ namespace CosoleTask
             {
                 Berlin_paking += TimeSpan.FromDays(1);
             }
-            if(Berlin_paking > Odessa)
+            if (Odessa < Berlin_paking)
             {
-                Berlin_paking += TimeSpan.FromDays(1);
+                Odessa += TimeSpan.FromDays(1);
             }
+         
             var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
+            return new[] {result.ToString(@"hh\:mm")};
         }
 
 		void task5()
@@ -357,20 +363,20 @@ namespace CosoleTask
         {
             int number = Convert.ToInt32(input[0]);
             int n = 0;
-            for (int i = 10; i < 99; i++)
+            for (int i = 10; i <= 99; i++)
             {
                 if (calcSum(Convert.ToString(i)) == calcSum(Convert.ToString(i * number)))
                 {
                     n += 1;
                 }
             }
-            return new[] { Convert.ToString(n+1) };
+            return new[] { Convert.ToString(n) };
         }
 
         int calcSum(string input)
         {
            int c = 0; 
-           for(int i =0; i < input.Length; i++)
+           for(int i = 0; i < input.Length; i++)
            {
                c = Convert.ToString(input)[i];
            }
