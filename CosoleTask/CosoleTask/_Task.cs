@@ -63,7 +63,7 @@ namespace CosoleTask
 					break;
 				case 583:
 					task583();
-					break;
+					 break;
 				case 5:
 					task5();
 					break;
@@ -294,12 +294,12 @@ namespace CosoleTask
 
         void task583() 
         {
-            test(_task583, new string[] { "08:00", "10:00", "12:00", "18:00" }, new string[] { "04:00" });
+        /*    test(_task583, new string[] { "08:00", "10:00", "12:00", "18:00" }, new string[] { "04:00" });
             test(_task583, new string[] { "23:00", "01:00", "05:00", "11:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "21:00", "23:00", "03:00", "09:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
 			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
-			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
+			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });*/
 			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
 
 		}
@@ -313,8 +313,19 @@ namespace CosoleTask
 
             var Odessa = b2 - a1;
             var Berlin_paking = a2 - b1;
+            if(Odessa < TimeSpan.Zero)
+            {
+                Odessa += TimeSpan.FromDays(1);
+            }
+            if (Berlin_paking < TimeSpan.Zero)
+            {
+                Berlin_paking += TimeSpan.FromDays(1);
+            }
             var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
-
+            if (result < TimeSpan.Zero)
+            {
+                result += TimeSpan.FromDays(1);
+            }
             return new[] {result.ToString(@"hh\:mm")};
         }
 
