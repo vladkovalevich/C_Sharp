@@ -13,8 +13,9 @@ namespace CosoleTask
 	}
 }
 
-/*
-using System;
+
+
+/*using System;
 
 namespace CosoleTask
 {	
@@ -23,7 +24,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-			execute(_task7338, 1);
+            execute(_task583, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -38,7 +39,7 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-		static string[] _task583(string[] input)
+        static string[] _task583(string[] input)
         {
             var a1 = DateTime.Parse(input[0]);
             var b1 = DateTime.Parse(input[1]);
@@ -62,9 +63,7 @@ namespace CosoleTask
             }
          
             var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
-            return new[] {result};
+            return new[] {result.ToString(@"hh\:mm")};
         }
     }
-}
-
-*/
+}*/

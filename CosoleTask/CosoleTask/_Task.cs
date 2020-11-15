@@ -298,14 +298,14 @@ namespace CosoleTask
 
         void task583() 
         {
-            test(_task583, new string[] { "08:00", "10:00", "12:00", "18:00" }, new string[] { "04:00" });
+            /*test(_task583, new string[] { "08:00", "10:00", "12:00", "18:00" }, new string[] { "04:00" });
             test(_task583, new string[] { "23:00", "01:00", "05:00", "11:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "21:00", "23:00", "03:00", "09:00"}, new string[] { "04:00" });
             test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
 			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
 			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
-			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
-
+			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });*/
+            test(_task583, new string[] { "23:00", "20:00", "22:00", "19:00" }, new string[] { "24:00" });
 		}
 		string[] _task583(string[] input)
         {
@@ -378,7 +378,7 @@ namespace CosoleTask
            int c = 0; 
            for(int i = 0; i < input.Length; i++)
            {
-               c = Convert.ToString(input)[i];
+               c = input[i];
            }
            return c;
         }
