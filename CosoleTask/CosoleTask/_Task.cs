@@ -305,7 +305,7 @@ namespace CosoleTask
 			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
 			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
 			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });*/
-            test(_task583, new string[] { "23:00", "20:00", "22:00", "19:00" }, new string[] { "24:00" });
+            test(_task583, new string[] { "23:00", "21:00", "22:00", "00:00" }, new string[] { "24:00" });
 		}
 		string[] _task583(string[] input)
         {
@@ -325,11 +325,11 @@ namespace CosoleTask
             {
                 Berlin_paking += TimeSpan.FromDays(1);
             }
-            if (Odessa < Berlin_paking)
+			
+            for(int i = 0; Odessa <= Berlin_paking; i++)
             {
                 Odessa += TimeSpan.FromDays(1);
-            }
-         
+            }        
             var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
             return new[] {result.ToString(@"hh\:mm")};
         }
