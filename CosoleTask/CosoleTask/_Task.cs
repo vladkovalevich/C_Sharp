@@ -361,11 +361,13 @@ namespace CosoleTask
         }
         string[] _task7338(string[] input)
         {
-            int number = Convert.ToInt32(input[0]);
+			int tmp = calcSum(123456);
+
+			int number = Convert.ToInt32(input[0]);
             int n = 0;
             for (int i = 10; i <= 99; i++)
             {
-                if (calcSum(Convert.ToString(i)) == calcSum(Convert.ToString(i * number)))
+                if (calcSum(i) == calcSum(i * number))
                 {
                     n += 1;
                 }
@@ -373,14 +375,17 @@ namespace CosoleTask
             return new[] { Convert.ToString(n) };
         }
 
-        int calcSum(string input)
+        int calcSum(int input)
         {
-           int c = 0; 
-           for(int i = 0; i < input.Length; i++)
-           {
-               c = input[i];
-           }
-           return c;
+           int result = 0;
+		   while (input > 0)
+		   {
+				int a = input % 10;
+				int b = input / 10;
+				result += a;
+				input = b;
+		   }
+           return result;
         }
 
 		void task7366()
