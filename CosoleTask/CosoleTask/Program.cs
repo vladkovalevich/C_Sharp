@@ -7,7 +7,7 @@ namespace CosoleTask
 		static void Main(string[] args)
 		{
 			_Task task = new _Task();
-			task.run(583);
+			task.run(7338);
             Console.ReadLine();
 		}
 	}
@@ -24,7 +24,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-            execute(_task583, 1);
+            execute(_task7338, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -39,31 +39,28 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-        static string[] _task583(string[] input)
+        static string[] _task7338(string[] input)
         {
-            var a1 = DateTime.Parse(input[0]);
-            var b1 = DateTime.Parse(input[1]);
+            int number = Convert.ToInt32(input[0]);
+            int n = 0;
+            for (int i = 10; i <= 99; i++)
+            {
+                if (calcSum(Convert.ToString(i)) == calcSum(Convert.ToString(i * number)))
+                {
+                    n += 1;
+                }
+            }
+            return new[] { Convert.ToString(n+1) };
+        }
 
-            var a2 = DateTime.Parse(input[2]);
-            var b2 = DateTime.Parse(input[3]);
-
-            var Odessa = b2 - a1;
-            var Berlin_paking = a2 - b1;
-            if(Odessa < TimeSpan.Zero)
-            {
-                Odessa += TimeSpan.FromDays(1);
-            }
-            if (Berlin_paking < TimeSpan.Zero)
-            {
-                Berlin_paking += TimeSpan.FromDays(1);
-            }
-            if (Odessa < Berlin_paking)
-            {
-                Odessa += TimeSpan.FromDays(1);
-            }
-         
-            var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
-            return new[] {result.ToString(@"hh\:mm")};
+        int calcSum(string input)
+        {
+           int c = 0; 
+           for(int i = 0; i < input.Length; i++)
+           {
+               c = input[i];
+           }
+           return c;
         }
     }
 }*/
