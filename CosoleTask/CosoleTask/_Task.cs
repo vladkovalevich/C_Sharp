@@ -304,8 +304,8 @@ namespace CosoleTask
             test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
 			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
 			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
-			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
-
+			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });*/
+            test(_task583, new string[] { "23:00", "21:00", "22:00", "00:00" }, new string[] { "24:00" });
 		}
 		string[] _task583(string[] input)
         {
@@ -325,11 +325,11 @@ namespace CosoleTask
             {
                 Berlin_paking += TimeSpan.FromDays(1);
             }
-            if (Odessa < Berlin_paking)
+			
+            for(int i = 0; Odessa <= Berlin_paking; i++)
             {
                 Odessa += TimeSpan.FromDays(1);
-            }
-         
+            }        
             var result = TimeSpan.FromSeconds((Odessa.TotalSeconds - Berlin_paking.TotalSeconds) / 2);
             return new[] {result.ToString(@"hh\:mm")};
         }
@@ -361,11 +361,13 @@ namespace CosoleTask
         }
         string[] _task7338(string[] input)
         {
-            int number = Convert.ToInt32(input[0]);
+			int tmp = calcSum(123456);
+
+			int number = Convert.ToInt32(input[0]);
             int n = 0;
             for (int i = 10; i <= 99; i++)
             {
-                if (calcSum(Convert.ToString(i)) == calcSum(Convert.ToString(i * number)))
+                if (calcSum(i) == calcSum(i * number))
                 {
                     n += 1;
                 }
@@ -373,14 +375,17 @@ namespace CosoleTask
             return new[] { Convert.ToString(n) };
         }
 
-        int calcSum(string input)
+        int calcSum(int input)
         {
-           int c = 0; 
-           for(int i = 0; i < input.Length; i++)
-           {
-               c = input[i];
-           }
-           return c;
+           int result = 0;
+		   while (input > 0)
+		   {
+				int a = input % 10;
+				int b = input / 10;
+				result += a;
+				input = b;
+		   }
+           return result;
         }
 
 		void task7366()
