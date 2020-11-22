@@ -15,7 +15,8 @@ namespace CosoleTask
 
 
 
-/*using System;
+/*
+using System;
 
 namespace CosoleTask
 {	
@@ -24,7 +25,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-            execute(_task7338, 1);
+            execute(_task116, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -39,28 +40,26 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-        static string[] _task7338(string[] input)
+        static string[] _task116(string[] input)
         {
-            int number = Convert.ToInt32(input[0]);
-            int n = 0;
-            for (int i = 10; i <= 99; i++)
+            string[] numbers = input;
+            int a = Convert.ToInt32(numbers[0]);
+            int c = Convert.ToInt32(numbers[1]);
+
+            for (int i = 0; i < c; i++)
             {
-                if (calcSum(Convert.ToString(i)) == calcSum(Convert.ToString(i * number)))
+                int f = Convert.ToInt32(Convert.ToString(a)+Convert.ToString(a));
+                if (f % c == 0) 
                 {
-                    n += 1;
+                    return new[] { Convert.ToString(c) };
+                }
+                else
+                {
+                    a++;
                 }
             }
-            return new[] { Convert.ToString(n+1) };
-        }
-
-        int calcSum(string input)
-        {
-           int c = 0; 
-           for(int i = 0; i < input.Length; i++)
-           {
-               c = input[i];
-           }
-           return c;
+            return new[] { "Not Found" };
         }
     }
-}*/
+}
+ */

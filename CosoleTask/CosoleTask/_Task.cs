@@ -304,7 +304,7 @@ namespace CosoleTask
             test(_task583, new string[] { "10:00", "12:20", "01:00", "07:20"}, new string[] { "04:20" });
 			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
 			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
-			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });*/
+			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
             test(_task583, new string[] { "23:00", "21:00", "22:00", "00:00" }, new string[] { "24:00" });
 		}
 		string[] _task583(string[] input)
@@ -361,8 +361,6 @@ namespace CosoleTask
         }
         string[] _task7338(string[] input)
         {
-			int tmp = calcSum(123456);
-
 			int number = Convert.ToInt32(input[0]);
             int n = 0;
             for (int i = 10; i <= 99; i++)
@@ -588,20 +586,19 @@ namespace CosoleTask
 
         string[] _task116(string[] input)
         {
-            string[] numbers = input;
-            int a = Convert.ToInt32(numbers[0]);
-            int c = Convert.ToInt32(numbers[1]);
+            int a = Convert.ToInt32(input[0]);
+            int c = Convert.ToInt32(input[1]);
 
             for (int i = 0; i < c; i++)
             {
-                int f = Convert.ToInt32(Convert.ToString(a)+Convert.ToString(a));
-                if (f % c == 0) 
+                int f = Convert.ToInt32(Convert.ToString(a) + Convert.ToString(a));
+                if(f % c == 0) 
                 {
                     return new[] { Convert.ToString(c) };
                 }
                 else
                 {
-                    a++;
+                    a++; 
                 }
             }
             return new[] { "Not Found" };
