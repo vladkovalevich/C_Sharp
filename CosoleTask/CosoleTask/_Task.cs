@@ -172,7 +172,6 @@ namespace CosoleTask
 						string key = pair.Key;
                         int value = pair.Value;
 						array[i] = key + " " + value;
-
 					}
                     return array;
                 }
@@ -183,7 +182,7 @@ namespace CosoleTask
                     int count = Convert.ToInt32(str[1]);
                     if(dict.ContainsKey(color))
                     {
-                      //  dict.
+                        dict[color] += count;
                     }
                     else
                     {
