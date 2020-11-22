@@ -587,13 +587,14 @@ namespace CosoleTask
         {
             int a = Convert.ToInt32(input[0]);
             int c = Convert.ToInt32(input[1]);
+            string buffer = "";
 
             for (int i = 0; i < c; i++)
             {
-                int f = Convert.ToInt32(Convert.ToString(a) + Convert.ToString(a));
-                if(f % c == 0) 
+                buffer += a;
+                if(Convert.ToInt32(buffer) % c == 0) 
                 {
-                    return new[] { Convert.ToString(c) };
+                    return new[] { Convert.ToString(a) };
                 }
                 else
                 {
