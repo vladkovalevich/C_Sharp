@@ -304,7 +304,37 @@ namespace CosoleTask
 			test(_task583, new string[] { "10:00", "09:00", "01:00", "04:00" }, new string[] { "01:00" });
 			test(_task583, new string[] { "10:00", "10:00", "01:00", "05:00" }, new string[] { "02:00" });
 			test(_task583, new string[] { "23:00", "01:00", "22:00", "04:00" }, new string[] { "04:00" });
-            test(_task583, new string[] { "23:00", "21:00", "22:00", "00:00" }, new string[] { "24:00" });
+
+
+			Dictionary<int, List<string>> eOlymp = new Dictionary<int, List<string>>();
+			eOlymp.Add(1, new List<string>() { "08:00", "10:00", "12:00", "18:00", "04:00" });
+			eOlymp.Add(2, new List<string>() { "00:00", "00:00", "23:59", "01:30", "00:46" });
+			eOlymp.Add(3, new List<string>() { "00:00", "00:00", "00:00", "00:00", "12:00" });
+			eOlymp.Add(4, new List<string>() { "14:09", "14:06", "20:45", "01:22", "02:17" });
+			eOlymp.Add(5, new List<string>() { "15:50", "05:37", "08:25", "06:14", "05:48" });
+			eOlymp.Add(6, new List<string>() { "13:04", "23:30", "15:57", "05:53", "00:11" });
+			eOlymp.Add(7, new List<string>() { "06:27", "02:13", "14:55", "20:07", "00:29" });
+			eOlymp.Add(8, new List<string>() { "14:08", "16:02", "17:28", "17:29", "00:58" });
+			eOlymp.Add(9, new List<string>() { "20:09", "06:21", "10:13", "14:10", "07:05" });
+			eOlymp.Add(10, new List<string>() { "13:01", "03:03", "13:04", "21:32", "11:15" });
+			eOlymp.Add(11, new List<string>() { "00:53", "02:36", "21:31", "02:10", "03:11" });
+			eOlymp.Add(12, new List<string>() { "14:49", "23:54", "22:47", "02:44", "06:31" });
+			eOlymp.Add(13, new List<string>() { "14:56", "03:46", "18:35", "16:09", "05:12" });
+			eOlymp.Add(14, new List<string>() { "03:25", "06:28", "00:26", "13:56", "08:17" });
+			eOlymp.Add(15, new List<string>() { "00:51", "00:43", "18:11", "12:30", "09:06" });
+			eOlymp.Add(16, new List<string>() { "17:15", "09:40", "03:25", "11:00", "12:00" });
+			eOlymp.Add(17, new List<string>() { "11:08", "11:36", "09:21", "08:53", "12:00" });
+			eOlymp.Add(18, new List<string>() { "07:55", "03:26", "18:59", "23:28", "12:00" });
+			eOlymp.Add(19, new List<string>() { "17:59", "09:20", "08:06", "16:45", "12:00" });
+			eOlymp.Add(20, new List<string>() { "04:23", "16:18", "14:05", "12:26", "05:08" });
+			eOlymp.Add(21, new List<string>() { "20:32", "23:54", "21:36", "03:08", "04:27" });
+			eOlymp.Add(22, new List<string>() { "08:29", "20:46", "20:19", "21:12", "06:35" });
+			foreach (var theTest in eOlymp)
+			{
+				Console.Write(@"Test {0} : ", theTest.Key);
+				test(_task583, new string[] { theTest.Value[0], theTest.Value[1], theTest.Value[2], theTest.Value[3] }, new string[] { theTest.Value[4] });
+			}
+
 		}
 		string[] _task583(string[] input)
         {
