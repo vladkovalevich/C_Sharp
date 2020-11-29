@@ -55,6 +55,9 @@ namespace CosoleTask
 				case 8815:
 					task8815();
 					break;
+                case 922:
+                    task922();
+                    break;
 				case 1:
 					task1();
 					break;
@@ -76,6 +79,9 @@ namespace CosoleTask
 				case 19:
 					task19();
 					break;
+                case 8:
+                    task8();
+                    break;
 				case 907:
 					task907();
 					break;
@@ -372,14 +378,58 @@ namespace CosoleTask
         void task8()
         {
             test(_task8, new string[] { "4" }, new[] { "12" });
-
+            test(_task8, new string[] { "5" }, new[] { "15" }); // +3
+            test(_task8, new string[] { "6" }, new[] { "17" }); // + 2
+            test(_task8, new string[] { "7" }, new[] { "20" }); // + 3
+            test(_task8, new string[] { "8" }, new[] { "22" }); // + 2
+            test(_task8, new string[] { "9" }, new[] { "24" }); // + 2
+            test(_task8, new string[] { "16" }, new[] { "40" }); // 
             execute(_task8, 1);
         }
 
         string[] _task8(string[] input)
         {
-            int n = Convert.ToInt32(input[0]);
-            double result = 2 * Math.Floor(Math.Sqrt(n)) + Math.Ceiling(n / Math.Floor(Math.Sqrt(n)));
+            double n = Convert.ToInt32(input[0]);
+            double result = 0;
+
+            /*
+             *
+              _ _
+             |_|_|
+             |_|_| n * (n + 1) * 2 = 12
+             * 
+             * 
+              _ _ _
+             |_|_|_|
+             |_|_|_|
+             |_|_|_| n * (n + 1) * 2 = 24
+             * 
+             * 4 х 4 = 4 * 5 * 2 = 40
+             * 
+             */
+
+            double sqrt = Math.Sqrt(n);
+            n = sqrt;
+            result = n * (n + 1) * 2;
+
+            return new[] { Convert.ToString(result) };
+        }
+
+        void task922()
+        {
+            test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 1 2 3" });
+            execute(_task922, 2);
+        }
+        string[] _task922(string[] input)
+        {
+            int a = Convert.ToInt32(input[0]);
+            string[] b = input[1].Split(' ');
+            string result = "";
+            for (int i = 0; i > a; i++) 
+            {
+                result = b[-i];
+            }
+
             return new[] { Convert.ToString(result) };
         }
 
