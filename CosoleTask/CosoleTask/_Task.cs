@@ -579,29 +579,31 @@ namespace CosoleTask
 
         void task116()
         {
-           test(_task116, new string[] { "11", "3" }, new[] { "13" });
+           test(_task116, new string[] { "11 3" }, new[] { "13" });
+           test(_task116, new string[] { "11 33" }, new[] { "13" });
            execute(_task116, 2);
+        }
+
+        int GetB(int a, int c)
+        {
+            int mod = 0;
+            for (int b = a; true; b++)
+            {
+                mod = (mod * (int)Math.Pow(10, (int)Math.Log10(b) + 1) + b) % c;
+                if (mod == 0)
+                {
+                    return b;
+                }
+            }
         }
 
         string[] _task116(string[] input)
         {
-            int a = Convert.ToInt32(input[0]);
-            int c = Convert.ToInt32(input[1]);
-            string buffer = "";
+            var inputArray = input[0].Split(' ');
+            var a = Convert.ToInt32(inputArray[0]);
+            var c = Convert.ToInt32(inputArray[1]);
 
-            for (int i = 0; i < c; i++)
-            {
-                buffer += a;
-                if(Convert.ToInt32(buffer) % c == 0) 
-                {
-                    return new[] { Convert.ToString(a) };
-                }
-                else
-                {
-                    a++; 
-                }
-            }
-            return new[] { "Not Found" };
+            return new[] { Convert.ToString(GetB(a, c)) };
         }
 
         void task1286()
