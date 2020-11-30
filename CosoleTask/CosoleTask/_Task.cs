@@ -392,22 +392,6 @@ namespace CosoleTask
             double n = Convert.ToInt32(input[0]);
             double result = 0;
 
-            /*
-             *
-              _ _
-             |_|_|
-             |_|_| n * (n + 1) * 2 = 12
-             * 
-             * 
-              _ _ _
-             |_|_|_|
-             |_|_|_|
-             |_|_|_| n * (n + 1) * 2 = 24
-             * 
-             * 4 х 4 = 4 * 5 * 2 = 40
-             * 
-             */
-
             double sqrt = Math.Sqrt(n);
             n = sqrt;
             result = n * (n + 1) * 2;
@@ -420,18 +404,19 @@ namespace CosoleTask
             test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 1 2 3" });
             execute(_task922, 2);
         }
+        
         string[] _task922(string[] input)
         {
             int a = Convert.ToInt32(input[0]);
             string[] b = input[1].Split(' ');
             string result = "";
-            for (int i = 0; i > a; i++) 
+            for (int i = 0; i < a; i++)
             {
-                result = b[-i];
+                result += b[a - i];
             }
 
             return new[] { Convert.ToString(result) };
-        }
+}
 
         void task7338()
         {
