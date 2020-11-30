@@ -401,22 +401,22 @@ namespace CosoleTask
 
         void task922()
         {
-            test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 1 2 3" });
+            test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 3 2 1" });
             execute(_task922, 2);
         }
         
         string[] _task922(string[] input)
         {
-            int a = Convert.ToInt32(input[0]);
+            int a = Convert.ToInt32(input[0]) - 1;
             string[] b = input[1].Split(' ');
-            string result = "";
-            for (int i = 0; i < a; i++)
+            string[] result = {};
+            for (int i = 1; i < a; i++)
             {
-                result += b[a - i];
+                result[i - 1] = b[a - i];
             }
 
             return new[] { Convert.ToString(result) };
-}
+        }
 
         void task7338()
         {
