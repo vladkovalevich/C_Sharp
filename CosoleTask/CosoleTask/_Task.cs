@@ -396,7 +396,7 @@ namespace CosoleTask
             n = sqrt;
             result = n * (n + 1) * 2;
 
-            return new[] { Convert.ToString(result) };
+            return new[] { Convert.ToString(Math.Floor(result)) };
         }
 
         void task922()
