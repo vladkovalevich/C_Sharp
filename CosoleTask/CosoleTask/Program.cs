@@ -25,7 +25,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-            execute(_task922, 1);
+            execute(_task8, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -40,17 +40,16 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-        static string[] _task922(string[] input)
+        static string[] _task8(string[] input)
         {
-            int a = Convert.ToInt32(input[0]);
-            string[] b = input[1].Split(' ');
-            string result = "";
-            for (int i = 1; i < a; i++)
-            {
-                result += b[a - i] + ' ';
-            }
+            double n = Convert.ToInt32(input[0]);
+            double result = 0; 
 
-            return new[] { Convert.ToString(result + "1") };
+            double sqrt = Math.Sqrt(n);
+            n = sqrt;
+            result = n * (n + 1) * 2;
+
+            return new[] { Convert.ToString(Math.Ceiling(result)) };
         }
     }
 }

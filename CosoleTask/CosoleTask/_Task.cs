@@ -383,20 +383,20 @@ namespace CosoleTask
             test(_task8, new string[] { "7" }, new[] { "20" }); // + 3
             test(_task8, new string[] { "8" }, new[] { "22" }); // + 2
             test(_task8, new string[] { "9" }, new[] { "24" }); // + 2
-            test(_task8, new string[] { "16" }, new[] { "40" }); // 
+            test(_task8, new string[] { "16" }, new[] { "40" }); 
             execute(_task8, 1);
         }
 
         string[] _task8(string[] input)
         {
             double n = Convert.ToInt32(input[0]);
-            double result = 0;
+            double result = 0; 
 
             double sqrt = Math.Sqrt(n);
             n = sqrt;
             result = n * (n + 1) * 2;
 
-            return new[] { Convert.ToString(Math.Floor(result)) };
+            return new[] { Convert.ToString(Math.Ceiling(result)) };
         }
 
         void task922()
@@ -406,7 +406,7 @@ namespace CosoleTask
         }
         
         string[] _task922(string[] input)
-        {
+        { 
             int a = Convert.ToInt32(input[0]) - 1;
             string[] b = input[1].Split(' ');
             string[] result = {};
@@ -416,8 +416,8 @@ namespace CosoleTask
             }
 
             return new[] { Convert.ToString(result) };
+         
         }
-
         void task7338()
         {
             test(_task7338, new string[] { "2" }, new[] { "10" });
