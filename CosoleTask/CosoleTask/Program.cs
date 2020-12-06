@@ -7,7 +7,7 @@ namespace CosoleTask
 		static void Main(string[] args)
 		{
 			_Task task = new _Task();
-			task.run(8);
+			task.run(906);
             Console.ReadLine();
 		}
 	}
@@ -25,7 +25,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-            execute(_task8, 1);
+            execute(_task906, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -40,16 +40,13 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-        static string[] _task8(string[] input)
+        static string[] _task906(string[] input)
         {
-            double n = Convert.ToInt32(input[0]);
-            double result = 0; 
+            int a = Convert.ToInt32(input[0]);
+            int b = Convert.ToInt32(input[1]);
+            int c = Convert.ToInt32(input[2]);
 
-            double sqrt = Math.Sqrt(n);
-            n = sqrt;
-            result = n * (n + 1) * 2;
-
-            return new[] { Convert.ToString(Math.Ceiling(result)) };
+            return new[] { Convert.ToString(a * b * c) };
         }
     }
 }

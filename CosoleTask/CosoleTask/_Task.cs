@@ -82,6 +82,9 @@ namespace CosoleTask
                 case 8:
                     task8();
                     break;
+                case 3:
+                    task3();
+                    break;
 				case 907:
 					task907();
 					break;
@@ -115,6 +118,9 @@ namespace CosoleTask
 				case 8807:
 					task8807();
 					break;
+                case 906:
+                    task906();
+                    break;
 				case 8808:
 					task8808();
                     break;
@@ -374,6 +380,31 @@ namespace CosoleTask
 			int n = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine(n * n);
 		}
+
+        void task3()
+        {
+            test(_task3, new string[] { "1" }, new[] { "12" });
+            test(_task3, new string[] { "2" }, new[] { "20" });
+            test(_task3, new string[] { "3" }, new[] { "28" });
+            test(_task3, new string[] { "8" }, new[] { "54" }); //2 * 2 * 2 = 8 = 12 * 3 + 9 * 2 = 36 + 18 = 54
+            test(_task3, new string[] { "27" }, new[] { "144" }); // 3 * 3 * 3 = 27   24 * 4 + 3 * 16 = 96 + 48 = 144
+            test(_task3, new string[] { "64" }, new[] { "?" }); // 4 * 4 * 4 = 64 300 ?
+
+        }
+
+        string[] _task3(string[] input)
+        {
+            int n = Convert.ToInt32(input[0]);
+            double result = 0;
+            double cubSide = 0;
+
+
+            cubSide = Math.Pow(n, 1 / (double)3);
+
+            //result = 
+
+            return new[] { Convert.ToString(Math.Ceiling(result)) };
+        }
         
         void task8()
         {
@@ -399,6 +430,27 @@ namespace CosoleTask
             return new[] { Convert.ToString(Math.Ceiling(result)) };
         }
 
+        void task906()
+        {
+            test(_task906, new string[] { "34" }, new[] { "12" });
+            execute(_task906, 1);
+        }
+
+        string[] _task906(string[] input)
+        {
+            string a = input[0];
+            int lenght = a.Length;
+            int result = 1;
+
+
+            for (int i = 0; i < lenght; i++) 
+            {
+                result *= Convert.ToInt32(Convert.ToString(a[i]));
+            }
+            return new[] { Convert.ToString(result) }; 
+           
+        }
+
         void task922()
         {
             test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 3 2 1" });
@@ -407,14 +459,14 @@ namespace CosoleTask
         
         string[] _task922(string[] input)
         { 
-            int a = Convert.ToInt32(input[0]) - 1;
+            int a = Convert.ToInt32(input[0]);
             string[] b = input[1].Split(' ');
             string[] result = {};
             for (int i = 1; i < a; i++)
             {
                 result[i - 1] = b[a - i];
             }
-
+            
             return new[] { Convert.ToString(result) };
          
         }
