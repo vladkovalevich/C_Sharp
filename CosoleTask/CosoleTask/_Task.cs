@@ -91,7 +91,10 @@ namespace CosoleTask
                 case 116:
                     task116();
                     break;
-				case 8800:
+                case 927:
+                    task927();
+                    break;
+                case 8800:
 					task8800();
 					break;
 				case 8801:
@@ -277,6 +280,29 @@ namespace CosoleTask
                     }
                 }
             }
+        }
+
+		void task927()
+		{
+            test(_task927, new string[] { "3", "2 100.00", "5 23.00", "10 22.50" }, new[] { "15" });
+            execute(_task927, 1);
+        }
+		string[] _task927(string[] input) 
+		{
+            int a = Convert.ToInt32(input[0]);
+            int result = 0;
+            for (int i = 1; i < a; i++)
+            {
+                string c = input[i];
+                string[] d = c.Split(' ');
+                int g = Convert.ToInt32(d[0]);
+                double z = Convert.ToDouble(d[1]);
+                if (z < 50.00)
+                {
+                    result = result + g;
+                }
+            }
+            return new[] { Convert.ToString(result) };
         }
 
 		void task923() 
