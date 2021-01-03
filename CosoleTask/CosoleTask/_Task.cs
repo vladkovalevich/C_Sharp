@@ -55,6 +55,9 @@ namespace CosoleTask
 				case 8815:
 					task8815();
 					break;
+                case 903:
+                    task903();
+                    break;
                 case 922:
                     task922();
                     break;
@@ -282,12 +285,78 @@ namespace CosoleTask
             }
         }
 
-		void task927()
-		{
+        void task921()
+        {
+            test(_task921, new string[] { "5", "-7.50", "", "" }, new[] { "2 -9.50" });
+            execute(_task921, 1); 
+        }
+        string[] _task921(string[] input)
+        {
+            int a = Convert.ToInt32(input[0]);
+            int result = 0;
+            for (int i = 1; i < a; i++)
+            {
+                string c = input[i];
+                string[] d = c.Split(' ');
+                int g = Convert.ToInt32(d[0]);
+                double z = Convert.ToDouble(d[1]);
+                if (z < 50.00)
+                {
+                    result = result + g;
+                }
+            }
+            return new[] { Convert.ToString(result) };
+        }
+
+        void task903() 
+        {
+            test(_task903, new string[] {"328"}, new[] { "8" });
+            execute(_task903, 1);
+        }
+        string[] _task903(string[] input)
+        {
+            string str = input[0];
+            int a = Convert.ToInt32(Convert.ToString(str[0]));
+            int b = Convert.ToInt32(Convert.ToString(str[1]));
+            int c = Convert.ToInt32(Convert.ToString(str[2]));
+            bool io = true;
+
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    return new[] { Convert.ToString(a) };
+                }
+
+            }
+            else if (b > a)
+            {
+                if (b > c)
+                {
+                    return new[] { Convert.ToString(b) };
+                }
+            }
+            else if (c > a)
+            {
+                if (c > b)
+                {
+                    return new[] { Convert.ToString(c) };
+                }
+
+            }
+            if (true) 
+            {
+                return new[] { Convert.ToString("=") };
+            }
+        
+        }
+
+        void task927()
+        { 
             test(_task927, new string[] { "3", "2 100.00", "5 23.00", "10 22.50" }, new[] { "15" });
             execute(_task927, 1);
         }
-		string[] _task927(string[] input) 
+		string[] _task927(string[] input)
 		{
             int a = Convert.ToInt32(input[0]);
             int result = 0;
