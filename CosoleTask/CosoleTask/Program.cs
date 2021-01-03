@@ -7,7 +7,7 @@ namespace CosoleTask
 		static void Main(string[] args)
 		{
 			_Task task = new _Task();
-			task.run(903);
+			task.run(921);
             Console.ReadLine();
 		}
 	}
@@ -40,14 +40,39 @@ namespace CosoleTask
 				Console.WriteLine(line);
 		}
 
-        static string[] _task906(string[] input)
-        {
-            int a = Convert.ToInt32(input[0]);
-            int b = Convert.ToInt32(input[1]);
-            int c = Convert.ToInt32(input[2]);
+         string str = input[0];
+            int a = Convert.ToInt32(Convert.ToString(str[0]));
+            int b = Convert.ToInt32(Convert.ToString(str[1]));
+            int c = Convert.ToInt32(Convert.ToString(str[2]));
+            bool io = true;
 
-            return new[] { Convert.ToString(a * b * c) };
-        }
+            if (a > b)
+            {
+                if (a > c)
+                {
+                    return new[] { Convert.ToString(a) };
+                }
+
+            }
+            else if (b > a)
+            {
+                if (b > c)
+                {
+                    Console.Writlb) };
+                }
+            }
+            else if (c > a)
+            {
+                if (c > b)
+                {
+                    return new[] { Convert.ToString(c) };
+                }
+
+            }
+            if (!io) 
+            {
+                return new[] { Convert.ToString("=") };
+            }
     }
 }
  */
