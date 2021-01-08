@@ -39,22 +39,26 @@ namespace CosoleTask
 			foreach (string line in output)
 				Console.WriteLine(line);
 		}
-        static string[] _task927(string[] input)
+        string[] _task921(string[] input)
 		{
-			int a = Convert.ToInt32(input[0]);
-			int result = 0;
-			for (int i = 1; i < a+1; i++)
+			int array_length = Convert.ToInt32(input[0]);
+			int count = 0;
+			decimal sum = 0;
+			string[] array = input[1].Split(" ");
+			for (int iterator = 0; iterator < array.Length; iterator++) 
 			{
-				string c = input[i];
-				string[] d = c.Split(' ');
-				int g = Convert.ToInt32(d[0]);
-				double z = Convert.ToDouble(d[1]);
-				if (z < 50.00)
+				decimal item = Convert.ToDecimal(array[iterator]);
+				if (item < 0) 
 				{
-					result = result + g;
+					count++;
+					sum += item;
 				}
 			}
-			return new[] { Convert.ToString(result) };
+
+			string result = "";
+			//result = Convert.ToString(count + " " + sum);                                          
+			result = count + " " + sum;
+			return new[] { result };
 		}
     }
 }
