@@ -570,15 +570,15 @@ namespace CosoleTask
 		string[] _task922(string[] input)
 		{ 
 			int a = Convert.ToInt32(input[0]);
-			string[] b = input[1].Split(' ');
-			string[] result = {};
-			for (int i = 1; i < a; i++)
+			int[] arrayNew = { };
+			for (int i = 0; i < a; i++)
 			{
-				result[i - 1] = b[a - i];
+				int[] array = { 3, 5, 7, 9 };
+				int KK = 1;
+			    arrayNew = array.Skip(array.Length - KK).Take(KK).Concat(array.Take(array.Length - KK)).ToArray();
 			}
 			
-			return new[] { Convert.ToString(result) };
-		 
+
 		}
 		void task7338()
 		{
