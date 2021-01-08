@@ -357,8 +357,10 @@ namespace CosoleTask
 				}
 
 			}
-			
-			return new[] { Convert.ToString("=") };
+			else 
+			{
+				return new[] { Convert.ToString("=") };
+			}
 			
 		
 		
