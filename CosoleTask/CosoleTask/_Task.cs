@@ -323,7 +323,7 @@ namespace CosoleTask
 
 	    void task903() 
 		{
-			test(_task903, new string[] {"328"}, new[] { "8" });
+			test(_task903, new string[] {"3 2 8"}, new[] { "8" });
 			execute(_task903, 1);
 		}
 	     string[] _task903(string[] input)
