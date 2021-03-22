@@ -323,10 +323,10 @@ namespace CosoleTask
 
 	    void task903() 
 		{
-			test(_task903, new string[] {"3 2 8"}, new[] { "8" });
-			execute(_task903, 1);
+			test(_task903, new string[] {"3", "2", "8"}, new[] { "8" });
+			execute(_task903, 3);
 		}
-	     string[] _task903(string[] input)
+	    string[] _task903(string[] input)
  		 {
 			string str = input[0];
 			int a = Convert.ToInt32(Convert.ToString(str[0]));
@@ -334,37 +334,24 @@ namespace CosoleTask
 			int c = Convert.ToInt32(Convert.ToString(str[2]));
 			bool io = true;
 
-			if (a > b)
+			if (a > b && a > c)
 			{
-				if (a > c)
-				{
-					return new[] { Convert.ToString(a) };
-				}
+				return new[] { Convert.ToString(a) };
 
 			}
-			else if (b > a)
+			else if (b > a && b > c)
 			{
-				if (b > c)
-				{
-					return new[] { Convert.ToString(b) };
-				}
+				return new[] { Convert.ToString(b) };
 			}
-			else if (c > a)
+			else if (c > a && c > b)
 			{
-				if (c > b)
-				{
-					return new[] { Convert.ToString(c) };
-				}
-
+				return new[] { Convert.ToString(c) };
 			}
 			else 
 			{
 				return new[] { Convert.ToString("=") };
 			}
-			
-		
-		
-		}
+	    }
 
 		void task927()
 		{ 
@@ -563,11 +550,11 @@ namespace CosoleTask
 
 		void task922()
 		{
-			test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 3 2 1" });
-			execute(_task922, 2);
+		//	test(_task922, new string[] { "4", "1 2 3 4" }, new[] { "4 3 2 1" });
+		//	execute(_task922, 2);
 		}
 		
-		string[] _task922(string[] input)
+		/*string[] _task922(string[] input)
 		{ 
 			int a = Convert.ToInt32(input[0]);
 			int[] arrayNew = { };
@@ -579,7 +566,7 @@ namespace CosoleTask
 			}
 			
 
-		}
+		}*/
 		void task7338()
 		{
 			test(_task7338, new string[] { "2" }, new[] { "10" });

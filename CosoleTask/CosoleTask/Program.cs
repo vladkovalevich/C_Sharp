@@ -7,7 +7,7 @@ namespace CosoleTask
 		static void Main(string[] args)
 		{
 			_Task task = new _Task();
-			task.run(927);
+			task.run(903);
             Console.ReadLine();
 		}
 	}
@@ -25,7 +25,7 @@ namespace CosoleTask
 		public delegate string[] OlympTask(string[] input);
 		static void Main(string[] args)
 		{
-            execute(_task921, 1);
+            execute(_task903, 1);
 		}
 		static void execute(OlympTask task, int inputLines)
         {
@@ -39,27 +39,32 @@ namespace CosoleTask
 			foreach (string line in output)
 				Console.WriteLine(line);
 		}
-        string[] _task921(string[] input)
-		{
-			int array_length = Convert.ToInt32(input[0]);
-			int count = 0;
-			decimal sum = 0;
-			string[] array = input[1].Split(" ");
-			for (int iterator = 0; iterator < array.Length; iterator++) 
-			{
-				decimal item = Convert.ToDecimal(array[iterator]);
-				if (item < 0) 
-				{
-					count++;
-					sum += item;
-				}
-			}
+       string[] _task903(string[] input)
+ 		 {
+			string str = input[0];
+			int a = Convert.ToInt32(Convert.ToString(str[0]));
+			int b = Convert.ToInt32(Convert.ToString(str[1]));
+			int c = Convert.ToInt32(Convert.ToString(str[2]));
+			bool io = true;
 
-			string result = "";
-			//result = Convert.ToString(count + " " + sum);                                          
-			result = count + " " + sum;
-			return new[] { result };
-		}
+			if (a > b && a > c)
+			{
+				return new[] { Convert.ToString(a) };
+
+			}
+			else if (b > a && b > c)
+			{
+				return new[] { Convert.ToString(b) };
+			}
+			else if (c > a && c > b)
+			{
+				return new[] { Convert.ToString(c) };
+			}
+			else 
+			{
+				return new[] { Convert.ToString("=") };
+			}
+	    }
     }
 }
  */
